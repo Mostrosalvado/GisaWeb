@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        {% block title %}
+        
+        {% endblock %}
+    </title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    
+
+</head>
+<body>
+    <div id="logotipo">
+            <a href="{% url 'home' %}">
+            <img src="{% static 'images/Gisa.png'%}"/>
+            </a>
+    </div>
+    <nav>
+        <ul class="menu">
+            <li><a href="{% url 'contacto' %}">Contacto</a></li>
+            {% if user.email%}
+            <li><a href="{% url 'obras' %}">Obras</a></li>
+            <li><a href="{% url 'en_construccion' %}">Lotes</a></li> 
+            <li><a href="{% url 'salir' %}">Salir</a></li>
+            <li class="search">
+                <input type="search" placeholder="Buscar">
+                <button type="submit" class="search-button">Ir</button>
+            </li>
+            {% else%}
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'Sobrenosotros' %}">Sobre Nosotros</a></li>
+            <li><a href="{% url 'login' %}">Iniciar Sesion</a></li>
+            <li><a href="{% url 'register' %}">Registrate</a></li>
+            {% endif %}
+            
+            
+        </ul>
+    </nav>
+
+<div class="white-block">
+
+
+    {% block content%}
+
+
+    {% endblock %}
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+    <footer class='footer'>
+        <div>
+            <h4>Gisa s.a. - Todos los derechos reservados -
+                <a class='link' href="{% url 'trabaja' %}">Trabaja con nosotros</a>
+            </h4>
+
+        </div>
+
+
+    </footer>
+
+
+
+
+
+
+
+</body>
+</html>

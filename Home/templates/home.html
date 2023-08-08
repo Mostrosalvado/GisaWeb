@@ -1,0 +1,96 @@
+{% extends 'layouts.html' %}
+
+{% block title%}{{title}}{% endblock%}
+
+
+
+{% block content%}
+        <h1>{{title}}</h1>
+    <hr/>
+    {% if messages%}
+        {% for message in messages %}
+            <div class="alert alert-success">
+                {{message}}
+            </div>
+        {% endfor%}
+    {% endif %}
+
+    {% if user.email %}
+    <h2>Bienvenide, {{user.first_name}} {{user.last_name}}</h2>
+    {% else %}
+        <h2> Identifícate para ver más cosas</h2>
+    {% endif %}
+
+{% comment "" %}
+Aca van las obras en carrusel
+{% endcomment %}
+
+    <article>
+        {% for obra in obras %}
+        {% if obra.public == True%}
+            <article class="obra-item">
+                {% if obra.image_1.url %}
+                    <div class="image">
+                        <img src="{{ obra.image_1.url }}" alt="Imagen 1">
+                    </div>
+                {% endif %}
+
+                {% if obra.image_2.url %}
+                    <div class="image">
+                        <img src="{{ obra.image_2.url }}" alt="Imagen 2">
+                    </div>
+                {% endif %}
+
+                {% if obra.image_3.url %}
+                    <div class="image">
+                        <img src="{{ obra.image_3.url }}" alt="Imagen 3">
+                    </div>
+                {% endif %}
+
+                <div class="data">
+                    <h2>{{ obra.title }}</h2>
+                    <p>
+                        {% for category in obra.category.all %}
+                            <a href="{% url 'categoria' category.id %}" class='link' >{{category}}</a>
+                            {% if forloop.counter < obra.category.all|length %}
+                                {{'-'}}
+                            {% endif %}
+                        {% endfor%}
+
+                    </p>
+                    <span class="date">{{ obra.created_at }}</span>
+                    <p>{{ obra.content | safe }}</p>
+                    <hr class="separador">
+                </div>
+                <div class="clearfix"></div>
+            </article>
+        {% endif %}
+    {% endfor %}
+
+    </article>
+
+{% comment "" %}
+Aca van los lotes en carrusel
+{% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock%}

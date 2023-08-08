@@ -1,0 +1,33 @@
+{% extends 'layouts.html' %}
+
+
+{% block title%}{{title}}{% endblock%}
+
+{% block content %}
+
+    <form method ="POST" action = '{% url 'register' %}'>
+        {% csrf_token %}
+
+        {% if messages%}
+        {% for message in messages %}
+            <div class="alert alert-success">
+                {{message}}
+            </div>
+        {% endfor%}
+    {% endif %}
+    
+    {{register_form.errors}}
+
+
+
+
+        {% for field in register_form %}
+            <label>{{field.label}}</label>
+            {{field}}
+
+        {% endfor %}
+
+        <input type='submit' value='Registrarse'/>
+    </form>
+
+{% endblock %}
