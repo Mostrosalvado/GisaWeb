@@ -20,8 +20,8 @@ nav {
     font-family: Arial, Helvetica, sans-serif;
     align-items: center;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: 5px;
+    padding:5px;
 }
 
 .menu li {
@@ -34,7 +34,7 @@ nav {
     text-decoration: none;
     font-size: small;
     padding: 5px;
-    position: relative; /* Agrega una posición relativa al enlace para colocar el submenú */
+    position: relative; 
 }
 
 .menu li a:hover {
@@ -60,6 +60,55 @@ nav {
     padding: 5px;
     color: #fff;
 }
+
+
+/* Estilos para el contenedor de datos */
+.data {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.data h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.data p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.data a.link {
+    color: #2ba977;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.data span.date {
+    font-size: 12px;
+    color: #999;
+    display: block;
+    margin-top: 10px;
+}
+
+.data p.safe-content {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.data hr.separador {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px dashed #ccc;
+}
+
 
 /* Estilos para el bloque blanco */
 .white-block {

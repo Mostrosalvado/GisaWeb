@@ -60,6 +60,8 @@ def register (request):
                 register_form.save()
                 messages.success(request,'Te has registrado correctamente!!')
                 return redirect('home')
+            else:
+                messages.warning(request,'Hubo un problema, intenta nuevamente')
         return render(request , 'users/register.html',{
             'title':"Registro",
             'register_form': register_form
