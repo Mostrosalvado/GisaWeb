@@ -1,6 +1,6 @@
 /* Estilos para el logotipo */
 #logotipo img {
-    width: 100px; /* Ajusta el ancho del logotipo a 100px */
+    width: 100px; /* Ajusta el ancho del logotipo */
     height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
     margin-right: 10px;
 }
@@ -12,8 +12,7 @@ nav {
     color: #fff;
     display:flex;
     align-items: center;
-    justify-content: right; /* Alinea los elementos hacia la izquierda y la derecha */
-    padding: 10px;
+    justify-content: right; 
 }
 
 .menu {
@@ -39,40 +38,11 @@ nav {
 }
 
 .menu li a:hover {
-    background-color: #d8cbc6;
-    color: #000000;
+    background: #2ba977;
+    color: white;
     transition: all 300ms;
 }
 
-/* Estilos para el submenú */
-.menu li ul {
-    display: none; /* Oculta el submenú por defecto */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    list-style-type: none;
-    padding: 0;
-}
-
-.menu li:hover ul {
-    display: block; /* Muestra el submenú al pasar el ratón sobre el enlace */
-}
-
-.menu li ul li {
-    padding: 8px 8px; /* Estilo para los elementos del submenú */
-}
-
-.menu li ul li a {
-    color: #333;
-    text-decoration: none;
-    display: block;
-}
-
-.menu li ul li a:hover {
-    background-color: #ddd;
-}
 
 .search {
     display: flex;
@@ -94,7 +64,7 @@ nav {
 /* Estilos para el bloque blanco */
 .white-block {
     background-color: rgb(255, 255, 255);
-    padding-bottom: 70px; /* Ajustar el espacio entre el contenido y el footer */
+    padding-bottom: 2000px; /* Ajustar el espacio entre el contenido y el footer */
 }
 
 form {
@@ -137,7 +107,7 @@ input[type="submit"]:hover {
 /* Estilos para el footer */
 .footer {
     width: 100%;
-    height: 50px; /* Ajusta la altura del footer según tus necesidades */
+    height: 50px; /* Ajusta la altura del footer  */
     background-color: #1B1E1F;
     border: 1px solid #333;
     color: #d1d4d6;
@@ -156,24 +126,27 @@ input[type="submit"]:hover {
     text-decoration: none;
 }
 
+/* Estilos para las obras */
 .obra-item {
     max-width: 100%;
-    height: auto;
-    display: block;
     margin: 0 auto;
-    margin-bottom: 10px;
-}
-
-/* Establece un ancho máximo en píxeles para las imágenes dentro de obra-item */
-.obra-item img {
-    max-width: 400px; /* Ajusta el ancho máximo de las imágenes */
-    height: auto;
+    margin-bottom: 20px; /* Mayor separación entre obras */
+    text-align: center; /* Centra el contenido horizontalmente */
 }
 
 /* Alinea las imágenes horizontalmente dentro de obra-item */
 .obra-item .image {
     display: inline-block;
-    margin-right: 10px; /* Ajusta el espaciado entre imágenes */
+    margin-right: 20px; /* Mayor espaciado entre imágenes */
+}
+
+/* Establece un ancho fijo y altura para las imágenes */
+.obra-item img {
+    width: 400px; /* Cambia este valor para ajustar el ancho deseado */
+    height: 300px; /* Cambia este valor para ajustar la altura deseada */
+    border: 1px solid #ccc; /* Agrega un borde */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega una sombra */
+    border-radius: 5px; /* Añade bordes redondeados */
 }
 
 .separador {
