@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
-from Home.forms import RegisterForm
+from Home.forms import RegisterForm,ContactForm
 from django.contrib.auth.decorators import login_required
+from django.core.mail import EmailMessage
 
 # Create your views here.
 
@@ -26,11 +27,42 @@ def sobreNosotros (request):
 
 
 
-def contacto (request):
+def contacto(request):
+    if request.method == "POST":
+        contact_form = ContactForm(request.POST)
+        if contact_form.is_valid():
+            # Guarda los datos en variables
+            name = contact_form.cleaned_data['name']
+            email = contact_form.cleaned_data['email']
+            message = contact_form.cleaned_data['message']
 
-    return render(request, "contacto.html",{
-        'title':'Contacto',
+            # Contenido del correo
+            subject = f'Nuevo mensaje de contacto de {name}'
+            body = f'Nombre: {name}\nCorreo electrónico: {email}\nMensaje: {message}'
+
+            # Enviar el correo
+            to_email = 'diealesal@gmail.com'  # Dirección de correo deseada
+            from_email = contact_form.cleaned_data['email']  # Usar el correo electrónico del usuario que envía el mensaje
+            email = EmailMessage(subject, body, to=[to_email], from_email=from_email)
+
+            
+            try:
+                email.send()
+                messages.success(request, '¡Tu mensaje ha sido enviado!')
+            except Exception as e:
+                messages.error(request, 'Hubo un error al enviar el mensaje.')
+
+            return redirect('home')
+        else:
+            messages.error(request, 'Por favor, corrija los errores en el formulario.')
+    else:
+        contact_form = ContactForm()
+
+    return render(request, "contacto.html", {
+        'form': contact_form,
     })
+
+
 
 def login_page (request):
     if request.method == 'POST':

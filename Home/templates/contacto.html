@@ -5,5 +5,24 @@
 
 
 {% block content%}
-    <h1>Llamame cuando llegues</h1>
+    <h1>Envianos un correo con tu consulta: </h1>
+    <form method ="POST" action = '{% url 'contacto' %}'>
+        {% csrf_token %}
+
+        {% for field in form %}
+            <label>{{ field.label }}</label>
+            {{ field }}
+        {% endfor %}
+
+        <input type='submit' value='Enviar'/>
+    </form>
+
+    {% if messages%}
+            {% for message in messages %}
+                <div class="alert alert-success">
+                    {{message}}
+                </div>
+            {% endfor%}
+    {% endif %}
+
 {% endblock%}

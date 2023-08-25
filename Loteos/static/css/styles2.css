@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el logotipo */
+#logotipo img {
+    width: 300px; /* Ajusta el ancho del logotipo */
+    height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
+    margin-right: 10px;
+}
+
+#menu {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+#menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#menu ul li {
+    margin-right: 20px;
+}
+
+#menu ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+#mapa {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.numeros {
+    flex: 1;
+}
+
+.numeros ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.numeros ul li {
+    margin-bottom: 10px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.barra-vertical {
+    background: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.barra-vertical button {
+    margin-bottom: 50px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.mapa {
+    width: 50%;
+    margin-right: 20px; /* Espacio entre la imagen y la barra */
+    margin-top: 20px;
+    margin-bottom: 50px;
+}

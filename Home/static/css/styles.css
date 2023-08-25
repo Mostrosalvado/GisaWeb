@@ -202,8 +202,7 @@ input[type="submit"]:hover {
     color: #1B1E1F;
 }
 
-.alert-success,
-.alert {
+.alert-success {
     padding: 20px;
     background: #72cea9;
     color: white;
@@ -211,8 +210,7 @@ input[type="submit"]:hover {
     margin-bottom: 10px;
 }
 
-.alert-warning,
-.alert{
+.alert-warning{
     background: red;
 }
 
@@ -227,6 +225,7 @@ input[type="submit"]:hover {
     display: block;
     padding: 5px;
     padding-left: 0px;
+    padding-right: 5px;
 }
 
 .box form input[type="text"],

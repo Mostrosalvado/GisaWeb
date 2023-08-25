@@ -9,6 +9,7 @@
 
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     
 
 </head>
@@ -20,20 +21,44 @@
     </div>
     <nav>
         <ul class="menu">
-            <li><a href="{% url 'contacto' %}">Contacto</a></li>
+            <li>
+            <i class="ri-mail-fill"></i>
+            <a href="{% url 'contacto' %}">Contacto</a>
+            </li>
             {% if user.email%}
-            <li><a href="{% url 'obras' %}">Obras</a></li>
-            <li><a href="{% url 'en_construccion' %}">Lotes</a></li> 
-            <li><a href="{% url 'salir' %}">Salir</a></li>
+            <li>
+            <i class="ri-building-4-fill"></i>
+            <a href="{% url 'obras' %}">Obras</a>
+            </li>
+            <li>
+            <i class="ri-bubble-chart-fill"></i>
+            <a href="{% url 'lote' %}">Lotes</a>
+            </li> 
+            <li>
+            <i class="ri-walk-fill"></i>
+            <a href="{% url 'salir' %}">Salir</a>
+            </li>
             <li class="search">
                 <input type="search" placeholder="Buscar">
                 <button type="submit" class="search-button">Ir</button>
             </li>
             {% else%}
-            <li><a href="{% url 'home' %}">Inicio</a></li>
-            <li><a href="{% url 'Sobrenosotros' %}">Sobre Nosotros</a></li>
-            <li><a href="{% url 'login' %}">Iniciar Sesion</a></li>
-            <li><a href="{% url 'register' %}">Registrate</a></li>
+            <li>
+            <i class="ri-home-3-fill"></i>
+            <a href="{% url 'home' %}">Inicio</a>
+            </li>
+            <li>
+            <i class="ri-award-fill"></i>
+            <a href="{% url 'Sobrenosotros' %}">Sobre Nosotros</a>
+            </li>
+            <li>
+            <i class="ri-user-3-fill"></i>
+            <a href="{% url 'login' %}">Iniciar Sesion</a>
+            </li>
+            <li>
+            <i class="ri-user-add-fill"></i>
+            <a href="{% url 'register' %}">Registrate</a>
+            </li>
             {% endif %}
             
             

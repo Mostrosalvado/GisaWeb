@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    {% load static %}
+    <div id="logotipo">
+            <a href="{% url 'lote' %}">
+            <img src="{% static 'images/PDS.png'%}"/>
+            </a>
+    </div>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles2.css' %}">
+</head>
+
+<body>
+    <div id="menu">
+        <ul>
+            <li><a href="/home/">Gisa</a></li>
+            <li><a href="#">Mi lote</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Salir</a></li>
+        </ul>
+    </div>
+
+<div class="container">
+    <div>
+        <img class="mapa" src="{% static 'images/lotes.png'%}" alt="Lotes"/>
+    </div>
+
+    <div class="barra-vertical">
+            <button>{{i}}</button>
+    </div>
+</div>
+
+
+
+</body>
+</html>

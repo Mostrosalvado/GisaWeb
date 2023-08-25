@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'Home',
     'Loteos',
     'Obras',
-    'ckeditor'
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -129,6 +129,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'Home', 'static'),
+    os.path.join(BASE_DIR, 'Loteos', 'static'), 
 ]
 
 
@@ -149,3 +150,6 @@ CKEDITOR_CONFIGS = {
         ]
     }
 }
+#Prueba django para el envio de correos
+#Modificar para produccion
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
