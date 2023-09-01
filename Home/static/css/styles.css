@@ -1,6 +1,6 @@
 /* Estilos para el logotipo */
 #logotipo img {
-    width: 100px; /* Ajusta el ancho del logotipo */
+    width: 150px; /* Ajusta el ancho del logotipo */
     height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
     margin-right: 10px;
 }
@@ -66,10 +66,12 @@ nav {
 .data {
     background-color: #f9f9f9;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    height: 80vh;
+
 }
 
 .data h2 {
@@ -116,6 +118,7 @@ nav {
     padding-bottom: 2000px; /* Ajustar el espacio entre el contenido y el footer */
 }
 
+/* Estilos para el formulario */
 form {
     width: 300px;
     margin: 0 auto;
@@ -170,6 +173,7 @@ input[type="submit"]:hover {
     right: 0;
 }
 
+/* Estilos para los links */
 .link {
     color: rgb(76, 103, 141);
     text-decoration: none;
@@ -177,10 +181,11 @@ input[type="submit"]:hover {
 
 /* Estilos para las obras */
 .obra-item {
-    max-width: 100%;
+    max-width: 30%;
     margin: 0 auto;
     margin-bottom: 20px; /* Mayor separación entre obras */
     text-align: center; /* Centra el contenido horizontalmente */
+    float: left;
 }
 
 /* Alinea las imágenes horizontalmente dentro de obra-item */
@@ -191,8 +196,8 @@ input[type="submit"]:hover {
 
 /* Establece un ancho fijo y altura para las imágenes */
 .obra-item img {
-    width: 400px; /* Cambia este valor para ajustar el ancho deseado */
-    height: 300px; /* Cambia este valor para ajustar la altura deseada */
+    width: auto; /* Cambia este valor para ajustar el ancho deseado */
+    height: 200px; /* Cambia este valor para ajustar la altura deseada */
     border: 1px solid #ccc; /* Agrega un borde */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega una sombra */
     border-radius: 5px; /* Añade bordes redondeados */
@@ -212,6 +217,7 @@ input[type="submit"]:hover {
 
 .alert-warning{
     background: red;
+    min-height: 30px;
 }
 
 
@@ -286,4 +292,41 @@ input[type="submit"]:hover {
 /* Estilo para cambiar el color de fondo cuando el botón está presionado */
 .search-button:active {
 background-color: #3e8e41; /* Color de fondo diferente cuando el botón está presionado */
+}
+
+/* Estilo para el video */
+.video-container {
+    display: flex; /* Mostrar los elementos en línea */
+    align-items: center; /* Centrar verticalmente los elementos */
+    gap: 20px; /* Espacio entre el video y el texto */
+    padding: 20px; /* Espacio alrededor del contenedor */
+}
+
+.video {
+    width: 50%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    
+}
+
+.video-text {
+    flex: 1; /* Ocupar el espacio restante */
+    margin-bottom: 50px;
+    
+}
+
+
+#titulo_home{
+    text-align: center;
+    font-size:xx-large;
+}
+
+#ingresa {
+    text-decoration: none;
+    background: #a7cfbf;
+    width: fit-content;
+    margin: 0 auto; /* Centrar horizontalmente */
+    padding: 10px; /* Añadir espacio alrededor del texto */
+    text-align: center;
+    color: aliceblue;
 }

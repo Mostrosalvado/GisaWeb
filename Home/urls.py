@@ -1,10 +1,10 @@
 from django.urls import path
 from . import views
-from Obras import views as obras_views
+
 
 urlpatterns = [
-    path('home/', obras_views.obras, name='home'),
-    path('', obras_views.obras, name='home'),
+    path('home/', views.home, name='home'),
+    path('', views.home, name='home'),
     path('trabaja/', views.trabaja, name='trabaja'),
     path('login/', views.login_page, name='login'),
     path('logout/', views.logout_user, name='salir'),

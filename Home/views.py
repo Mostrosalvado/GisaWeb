@@ -4,19 +4,30 @@ from django.contrib.auth import authenticate,login,logout
 from Home.forms import RegisterForm,ContactForm
 from django.contrib.auth.decorators import login_required
 from django.core.mail import EmailMessage
+from django.core.paginator import Paginator
+from Obras.models import  Obra
 
 # Create your views here.
 
 def home (request):
+    #Sacar obras
+    obras=Obra.objects.all()
+    #Paginar obras
+    paginacion=Paginator(obras,3)
+    #Obtener numero de pagina
+    page = request.GET.get('page')
+    page_obras= paginacion.get_page(page)
 
     return render(request, "home.html",{
-        'title':'Inicio',
+        'title':'Innovación que Construye Futuros',
+        'obras':page_obras
     })
 
 def trabaja (request):
 
     return render(request, "trabaja.html",{
         'title':'Trabaja con nosotros',
+
     })
 
 def sobreNosotros (request):
@@ -106,4 +117,4 @@ def en_construccion (request):
 @login_required(login_url="login")
 def logout_user (request):
     logout(request)
-    return redirect ('login')
+    return redirect ('home')

@@ -6,7 +6,7 @@ from django.core.paginator import Paginator
 
 
 # Create your views here.
-@login_required(login_url="login")
+'''
 def obras (request):
     
     #Sacar obras
@@ -18,10 +18,10 @@ def obras (request):
     page_obras= paginacion.get_page(page)
 
     return render(request, "home.html",{
-        'title':'Inicio',
+        'title':'Obras',
         'obras':page_obras
     })
-
+'''
 
 @login_required(login_url="login")
 def obras_user(request):

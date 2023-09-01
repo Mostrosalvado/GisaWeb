@@ -21,17 +21,19 @@
         </ul>
     </div>
 
-<div class="container">
+<div class="contenedor-principal">
     <div>
-        <img class="mapa" src="{% static 'images/lotes.png'%}" alt="Lotes"/>
+        <img class="mapa" src="{% static 'images/lotes.png' %}" alt="Lotes"/>
     </div>
-
     <div class="barra-vertical">
-            <button>{{i}}</button>
+        {% for numero in numeros %}
+            <button>{{numero}}</button>
+        {% endfor %}
     </div>
 </div>
 
 
+{# arreglar el problema del css y la barra lateral #}
 
 </body>
 </html>

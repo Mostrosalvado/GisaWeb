@@ -1,15 +1,13 @@
 {% extends 'layouts.html' %}
-
-{% block title%}{{title}}{% endblock%}
-
-
+{% load static %}
+{% block title%}Inicio{% endblock%}
 
 {% block content%}
-        <h1>{{title}}</h1>
+    <h1 id='titulo_home'>{{title}}</h1>
     <hr/>
     {% if messages%}
         {% for message in messages %}
-            <div class="alert alert-success">
+            <div class="alert-success alert-warning">
                 {{message}}
             </div>
         {% endfor%}
@@ -18,14 +16,36 @@
     {% if user.email %}
     <h2>Bienvenide, {{user.first_name}} {{user.last_name}}</h2>
     {% else %}
-        <h2> Identifícate para ver más cosas</h2>
+        <h2 id='ingresa'> 
+        <a href='login' id=ingresa >Ingresa para ver más</a> 
+        </h2>
     {% endif %}
 
 {% comment "" %}
-Aca van las obras en carrusel
+Aca van el video y una descripcion de la empresa 
+{% endcomment %}
+<hr class="separador">
+
+    <div class="video-container">
+        <video controls class="video">
+            <source src="{% static 'images/dummy Video.mp4' %}" type="video/mp4">
+            Tu navegador no admite la reproducción de videos.
+        </video>
+        <div class="video-text">
+            <p>In rhoncus fringilla diam. Nam id eros et nunc blandit luctus. Nam et vestibulum elit. Proin vestibulum vel tortor in tempor. Morbi rutrum ac eros ac tincidunt. Quisque at lacus sit amet nisl consequat laoreet sit amet vel velit. Nunc ut odio sit amet nisl posuere consectetur. Morbi facilisis, felis et condimentum congue, libero dui semper magna, ac pharetra nisi risus a leo. Nulla vehicula odio a eros laoreet suscipit auctor ac sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce aliquet dignissim diam eu pellentesque.
+
+Phasellus arcu sem, laoreet faucibus sapien rutrum, tincidunt congue lacus. Sed egestas dolor id quam volutpat vulputate. Integer bibendum, enim nec dapibus ultricies, tellus urna lobortis arcu, in pretium ex diam eget mauris. Nulla ac porta odio. Donec quam ligula, lacinia in sapien in, bibendum tristique risus. Suspendisse vulputate, dolor ac elementum eleifend, nisi sem viverra nibh, nec facilisis elit lectus et augue. Sed in ipsum urna. Phasellus tristique molestie turpis, in malesuada sapien cursus eget. Nam facilisis efficitur sollicitudin. Vestibulum ac tellus rutrum, pharetra mi quis, bibendum nisi. Praesent id nunc tristique est elementum porta. Aenean dictum sed tortor eu interdum. Fusce aliquam metus vel eros porttitor aliquam. Nullam vulputate posuere purus ut fringilla.
+
+Maecenas nec dolor molestie, vehicula libero vitae, laoreet lacus. Cras vel pharetra metus. Sed sed quam condimentum felis ullamcorper pharetra. Pellentesque nulla nisi, pulvinar at eros placerat, viverra tristique tellus. Suspendisse venenatis ex ultrices arcu hendrerit finibus..</p>
+        </div>
+    </div>
+
+<hr class="separador">
+{% comment "" %}
+Aca van las obras 
 {% endcomment %}
 
-    <article>
+    <article class="obras_home">
         {% for obra in obras %}
         {% if obra.public == True%}
             <article class="obra-item">
@@ -34,7 +54,7 @@ Aca van las obras en carrusel
                         <img src="{{ obra.image_1.url }}" alt="Imagen 1">
                     </div>
                 {% endif %}
-
+                {% comment "" %}
                 {% if obra.image_2.url %}
                     <div class="image">
                         <img src="{{ obra.image_2.url }}" alt="Imagen 2">
@@ -46,7 +66,7 @@ Aca van las obras en carrusel
                         <img src="{{ obra.image_3.url }}" alt="Imagen 3">
                     </div>
                 {% endif %}
-
+                {% endcomment %}
                 <div class="data">
                     <h2>{{ obra.title }}</h2>
                     <p>
@@ -56,21 +76,24 @@ Aca van las obras en carrusel
                                 {{'-'}}
                             {% endif %}
                         {% endfor%}
-
                     </p>
+
                     <span class="date">{{ obra.created_at }}</span>
                     <p>{{ obra.content | safe }}</p>
                     <hr class="separador">
                 </div>
+
                 <div class="clearfix"></div>
+
             </article>
         {% endif %}
     {% endfor %}
 
     </article>
 
+
 {% comment "" %}
-Aca van los lotes en carrusel
+Aca van los lotes 
 {% endcomment %}
 
 
