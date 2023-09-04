@@ -15,5 +15,5 @@ class ObrasAdmin (admin.ModelAdmin):
         obj.save()
 
 # Register your models here.
-admin.site.register(Obra,ObrasAdmin)
+admin.site.register(Obra,ObrasAdmin) 
 admin.site.register(Category,CategoryAdmin)

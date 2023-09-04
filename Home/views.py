@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import EmailMessage
 from django.core.paginator import Paginator
 from Obras.models import  Obra
+from Loteos.models import Lote
 
 # Create your views here.
 
@@ -18,9 +19,18 @@ def home (request):
     page = request.GET.get('page')
     page_obras= paginacion.get_page(page)
 
+    #Sacar obras
+    lotes=Lote.objects.all()
+    #Paginar obras
+    paginacion=Paginator(lotes,3)
+    #Obtener numero de pagina
+    page = request.GET.get('page')
+    page_lotes= paginacion.get_page(page)
+
     return render(request, "home.html",{
         'title':'Innovación que Construye Futuros',
-        'obras':page_obras
+        'obras':page_obras,
+        'lotes': page_lotes
     })
 
 def trabaja (request):

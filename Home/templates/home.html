@@ -99,6 +99,32 @@ Aca van los lotes
 
 
 
+<article class="lotes_home">
+        {% for lote in lotes %}
+        {% if lote.public == True%}
+            <article class="lote-item">
+                {% if lote.image.url %}
+                    <div class="image">
+                        <img src="{{ lote.image.url }}" alt="Imagen">
+                    </div>
+                {% endif %}
+
+                <div class="data">
+                    <h2>Lote:{{ lote.id_lote }}</h2>
+
+                    <span class="date">{{ obra.created_at }}</span>
+                    <p>{{ lote.content | safe }}</p>
+                    <hr class="separador">
+                </div>
+
+                <div class="clearfix"></div>
+
+            </article>
+        {% endif %}
+    {% endfor %}
+
+    </article>
+
 
 
 

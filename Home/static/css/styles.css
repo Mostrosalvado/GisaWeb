@@ -330,3 +330,15 @@ background-color: #3e8e41; /* Color de fondo diferente cuando el botón está pr
     text-align: center;
     color: aliceblue;
 }
+.lotes_home {
+    display: flex;
+    margin-top: 900px;
+    border: solid #1B1E1F;
+}
+
+/* Añade estilos adicionales si es necesario para los elementos article y div */
+.lotes_home article,
+.lotes_home div {
+    flex: 1; /* Distribuye el espacio disponible de manera equitativa entre los elementos */
+    padding: 10px; /* Añade espacio entre los elementos si es necesario */
+}
