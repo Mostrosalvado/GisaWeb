@@ -321,6 +321,11 @@ footer i{
     font-size:xx-large;
 }
 
+#welcome_message{
+    text-align:center;
+    font-size:x-large;
+}
+
 .titulo_articulos{
     text-align:center;
     font-size:xx-large;
