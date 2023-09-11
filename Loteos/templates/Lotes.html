@@ -9,6 +9,7 @@
             </a>
     </div>
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles2.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
 <body>
@@ -18,22 +19,32 @@
             <li><a href="#">Mi lote</a></li>
             <li><a href="#">Login</a></li>
             <li><a href="#">Salir</a></li>
+            <li class="social">
+                <a href="https://www.instagram.com/puertodelsol_as/"><i class="ri-instagram-fill"></i></a>
+            </li>
         </ul>
     </div>
+    <li class="search">
+        <input class="search_input" placeholder="Buscar Lote">
+        <button type="submit" class="search-button">Ir</button>
+    </li>
 
 <div class="contenedor-principal">
     <div>
         <img class="mapa" src="{% static 'images/lotes.png' %}" alt="Lotes"/>
     </div>
-    <div class="barra-vertical">
-        {% for numero in numeros %}
-            <button>{{numero}}</button>
-        {% endfor %}
+
     </div>
 </div>
 
-
-{# arreglar el problema del css y la barra lateral #}
+    <footer class='footer'>
+        <div>
+            <h4>Puerto del sol - Todos los derechos reservados -
+                <a class='link' href="{% url 'trabaja' %}">Trabaja con nosotros</a>
+                <a href="https://www.instagram.com/puertodelsol_as/" class='link'><i class="ri-instagram-fill"></i></a>
+            </h4>
+        </div>
+    </footer>
 
 </body>
 </html>

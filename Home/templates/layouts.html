@@ -19,6 +19,7 @@
             <img src="{% static 'images/Gisa.png'%}"/>
             </a>
     </div>
+    
     <nav>
         <ul class="menu">
             <li>
@@ -37,10 +38,6 @@
             <li>
             <i class="ri-walk-fill"></i>
             <a href="{% url 'salir' %}">Salir</a>
-            </li>
-            <li class="search">
-                <input type="search" placeholder="Buscar">
-                <button type="submit" class="search-button">Ir</button>
             </li>
             {% else%}
             <li>
@@ -82,18 +79,12 @@
 
 
 
-
-
-
     <footer class='footer'>
         <div>
             <h4>Gisa s.a. - Todos los derechos reservados -
                 <a class='link' href="{% url 'trabaja' %}">Trabaja con nosotros</a>
             </h4>
-
         </div>
-
-
     </footer>
 
 

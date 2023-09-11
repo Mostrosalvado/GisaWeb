@@ -44,23 +44,6 @@ nav {
 }
 
 
-.search {
-    display: flex;
-    align-items: center;
-}
-
-.search input[type="text"] {
-    padding: 5px;
-}
-
-.search button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    color: #fff;
-}
-
 
 /* Estilos para el contenedor de datos */
 .data {
@@ -109,6 +92,20 @@ nav {
     margin: 20px 0;
     border: none;
     border-top: 1px dashed #ccc;
+}
+
+.data {
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.data p {
+    background-color: #f9f9f9; /* Fondo gris claro para el texto */
+    padding: 10px; /* Espacio alrededor del texto */
+    margin: 0; /* Elimina el margen predeterminado */
 }
 
 
@@ -173,35 +170,65 @@ input[type="submit"]:hover {
     right: 0;
 }
 
+.footer h4{
+    line-height: 0.2;
+}
+
+.footer a{
+    margin-right: 20px;
+}
+footer i{
+    font-size: 30px; /* Ajusta el tamaño deseado */
+}
+
+
 /* Estilos para los links */
 .link {
     color: rgb(76, 103, 141);
     text-decoration: none;
+    
 }
 
 /* Estilos para las obras */
+/* Estilos para las obras */
 .obra-item {
-    max-width: 30%;
+    max-width: 33.33%;
     margin: 0 auto;
-    margin-bottom: 20px; /* Mayor separación entre obras */
-    text-align: center; /* Centra el contenido horizontalmente */
-    float: left;
+    margin-bottom: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    float: left; /* Cambiamos el float a "left" para alinear las obras horizontalmente */
+    width: 33.33%; /* Cambiamos el width a "33.33%" para dividir en tres columnas */
 }
 
 /* Alinea las imágenes horizontalmente dentro de obra-item */
 .obra-item .image {
     display: inline-block;
-    margin-right: 20px; /* Mayor espaciado entre imágenes */
 }
 
 /* Establece un ancho fijo y altura para las imágenes */
 .obra-item img {
-    width: auto; /* Cambia este valor para ajustar el ancho deseado */
-    height: 200px; /* Cambia este valor para ajustar la altura deseada */
-    border: 1px solid #ccc; /* Agrega un borde */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega una sombra */
-    border-radius: 5px; /* Añade bordes redondeados */
+    width: auto;
+    height: 200px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
+
+/* Limpiar el flujo de elementos para evitar problemas de alineación */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Estilo adicional para el contenedor de las obras */
+.obras_home {
+    width: 100%; /* Asegúrate de que el contenedor ocupe todo el ancho disponible */
+    overflow: hidden; /* Para limpiar correctamente el float de los elementos hijos */
+}
+
+
 
 .separador {
     color: #1B1E1F;
@@ -265,34 +292,7 @@ input[type="submit"]:hover {
     
 }
 
-/* Estilos para el contenedor del botón de búsqueda */
-.search {
-    display: flex; /* Muestra los elementos en línea */
-    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
-    max-width: 300px; /* Establece un ancho máximo para el contenedor */
-}
 
-/* Estilos para el botón de búsqueda */
-.search-button {
-    background-color: #4CAF50; /* Color de fondo del botón */
-    color: white; /* Color del texto del botón */
-    border: none; /* Elimina el borde del botón */
-    padding: 10px 20px; /* Añade un relleno al botón (ajústalo según tus preferencias) */
-    cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
-    border-radius: 5px; /* Agrega bordes redondeados al botón */
-    font-size: 16px; /* Tamaño del texto del botón */
-    transition: background-color 0.3s ease; /* Agrega una transición suave para cambiar el color de fondo */
-}
-
-/* Estilo para cambiar el color de fondo cuando el cursor está sobre el botón */
-.search-button:hover {
-    background-color: #45a049; /* Color de fondo diferente al pasar por encima */
-}
-
-/* Estilo para cambiar el color de fondo cuando el botón está presionado */
-.search-button:active {
-background-color: #3e8e41; /* Color de fondo diferente cuando el botón está presionado */
-}
 
 /* Estilo para el video */
 .video-container {
@@ -316,10 +316,18 @@ background-color: #3e8e41; /* Color de fondo diferente cuando el botón está pr
 }
 
 
-#titulo_home{
-    text-align: center;
+.titulo_home{
+    text-align:center;
     font-size:xx-large;
 }
+
+.titulo_articulos{
+    text-align:center;
+    font-size:xx-large;
+    text-decoration: underline;
+    margin-bottom: 80px;
+}
+
 
 #ingresa {
     text-decoration: none;
@@ -330,15 +338,56 @@ background-color: #3e8e41; /* Color de fondo diferente cuando el botón está pr
     text-align: center;
     color: aliceblue;
 }
-.lotes_home {
-    display: flex;
-    margin-top: 900px;
-    border: solid #1B1E1F;
+
+/* Estilos para los lotes */
+.lote-item {
+    max-width: 33.33%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    float: left; /* Cambiamos el float a "left" para alinear los lotes horizontalmente */
+    width: 33.33%; /* Cambiamos el width a "33.33%" para dividir en tres columnas */
 }
 
-/* Añade estilos adicionales si es necesario para los elementos article y div */
-.lotes_home article,
-.lotes_home div {
-    flex: 1; /* Distribuye el espacio disponible de manera equitativa entre los elementos */
-    padding: 10px; /* Añade espacio entre los elementos si es necesario */
+/* Alinea las imágenes horizontalmente dentro de lote-item */
+.lote-item .image {
+    display: inline-block;
 }
+
+/* Establece un ancho fijo y altura para las imágenes */
+.lote-item img {
+    width: auto;
+    height: 200px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Limpiar el flujo de elementos para evitar problemas de alineación */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Estilo adicional para el contenedor de los lotes */
+.lotes_home {
+    width: 100%; /* Asegúrate de que el contenedor ocupe todo el ancho disponible */
+    overflow: hidden; /* Para limpiar correctamente el float de los elementos hijos */
+}
+
+/* Aplicar fondo gris claro al contenido de los lotes */
+.lote-item p {
+    background-color: #f9f9f9; /* Fondo gris claro para el texto de los lotes */
+    padding: 10px; /* Espacio alrededor del texto */
+    margin: 0; /* Elimina el margen predeterminado */
+}
+.obra-item:first-child .data p {
+    background-color: transparent; /* Elimina el fondo gris claro */
+    padding: 0; /* Elimina el espacio alrededor del texto */
+}
+
+
+
+

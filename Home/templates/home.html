@@ -3,7 +3,7 @@
 {% block title%}Inicio{% endblock%}
 
 {% block content%}
-    <h1 id='titulo_home'>{{title}}</h1>
+    <h1 class='titulo_home'>{{title}}</h1>
     <hr/>
     {% if messages%}
         {% for message in messages %}
@@ -45,16 +45,18 @@ Maecenas nec dolor molestie, vehicula libero vitae, laoreet lacus. Cras vel phar
 Aca van las obras 
 {% endcomment %}
 
+<h1 class="titulo_articulos">Obras</h1>
+
     <article class="obras_home">
-        {% for obra in obras %}
-        {% if obra.public == True%}
-            <article class="obra-item">
-                {% if obra.image_1.url %}
-                    <div class="image">
-                        <img src="{{ obra.image_1.url }}" alt="Imagen 1">
-                    </div>
-                {% endif %}
-                {% comment "" %}
+    {% for obra in obras %}
+    {% if obra.public == True %}
+        <article class="obra-item">
+            {% if obra.image_1.url %}
+                <div class="image">
+                    <img src="{{ obra.image_1.url }}" alt="Imagen 1">
+                </div>
+            {% endif %}
+            {% comment "" %}
                 {% if obra.image_2.url %}
                     <div class="image">
                         <img src="{{ obra.image_2.url }}" alt="Imagen 2">
@@ -66,37 +68,35 @@ Aca van las obras
                         <img src="{{ obra.image_3.url }}" alt="Imagen 3">
                     </div>
                 {% endif %}
-                {% endcomment %}
-                <div class="data">
-                    <h2>{{ obra.title }}</h2>
-                    <p>
-                        {% for category in obra.category.all %}
-                            <a href="{% url 'categoria' category.id %}" class='link' >{{category}}</a>
-                            {% if forloop.counter < obra.category.all|length %}
-                                {{'-'}}
-                            {% endif %}
-                        {% endfor%}
-                    </p>
+            {% endcomment %}
 
-                    <span class="date">{{ obra.created_at }}</span>
-                    <p>{{ obra.content | safe }}</p>
-                    <hr class="separador">
-                </div>
+            <div class="data">
+                <h2>{{ obra.title }}</h2>
+                <p>
+                    {% for category in obra.category.all %}
+                        <a href="{% url 'categoria' category.id %}" class='link' >{{category}}</a>
+                        {% if forloop.counter < obra.category.all|length %}
+                            {{'-'}}
+                        {% endif %}
+                    {% endfor %}
+                </p>
 
-                <div class="clearfix"></div>
-
-            </article>
-        {% endif %}
+                <span class="date">{{ obra.created_at }}</span>
+                <p>{{ obra.content | safe }}</p>
+                <hr class="separador">
+            </div>
+        </article>
+    {% endif %}
     {% endfor %}
+</article>
 
-    </article>
 
 
 {% comment "" %}
 Aca van los lotes 
 {% endcomment %}
-
-
+<hr class="separador">
+<h1 class="titulo_articulos">Lotes</h1>
 
 
 <article class="lotes_home">

@@ -15,6 +15,9 @@ body {
     background-color: #333;
     color: white;
     padding: 10px;
+    display: flex; /* Cambia a un contenedor flexible para alinear elementos */
+    justify-content: center; /* Distribuye elementos a ambos lados */
+    align-items: center; /* Centra verticalmente los elementos */
 }
 
 #menu ul {
@@ -22,6 +25,7 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
+    align-items: center;
 }
 
 #menu ul li {
@@ -33,49 +37,113 @@ body {
     color: white;
 }
 
-.numeros {
-    flex: 1;
-}
-
-.numeros ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.numeros ul li {
-    margin-bottom: 10px;
-}
-
 .contenedor-principal {
     display: flex;
     align-items: flex-start; /* Alinea los elementos en la parte superior del contenedor */
 }
 
-.barra-vertical {
-    background: #333;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    margin-left: 0px; /* Ajusta este margen si es necesario */
-    height: 100%; /* Para que la barra tenga la misma altura que la imagen */
-    width: auto; /* Para que la barra sea más ancha y ajuste su contenido */
-}
-
-.barra-vertical .button {
-    margin-bottom: 50px; /* Reduzco el espacio entre los botones */
-    padding: 5px; /* Reduzco el espacio dentro de los botones */
-    border-radius: 20px; /* Reduzco el radio del borde de los botones */
-
-}
-
 .mapa {
-    width: 90%;
+    width: 100%;
     height: 100%;
     margin-right: 0px;
     margin-top: 20px;
     margin-bottom: 50px;
 }
 
+/* Estilos para el footer */
+.footer {
+    width: 100%;
+    height: 50px; /* Ajusta la altura del footer  */
+    background-color: #1B1E1F;
+    border: 1px solid #333;
+    color: #d1d4d6;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: 0px 0px 20px grey;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer h4{
+    line-height: 0.2;
+}
+
+.footer a{
+    margin-right: 20px;
+}
+footer i{
+    font-size: 30px; /* Ajusta el tamaño deseado */
+}
+/* Estilos para los links */
+.link {
+    color: rgb(76, 103, 141);
+    text-decoration: none;
+    
+}
+/* Estilo CSS para mostrar los elementos de redes sociales */
+.social li {
+    background-color: rgb(255, 255, 255);
+    display: inline-block; /* Cambia 'inline' a 'inline-block' para permitir ajustar el tamaño */
+    margin-right: 30px; /* Añade espacio entre los iconos si es necesario */
+}
+
+.social a {
+    color: rgb(76, 103, 141);
+    text-decoration: none; /* Evita que los iconos aparezcan subrayados */
+}
+
+/* Estilos para los iconos de redes sociales */
+.social i {
+    font-size: 20px; /* Ajusta el tamaño deseado */
+}
+.nav_social{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
+}
+
+
+/* Estilos para el contenedor del botón de búsqueda */
+.search {
+    display: flex; /* Muestra los elementos en línea */
+    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
+    max-width: 300px; /* Establece un ancho máximo para el contenedor */
+}
+
+/* Estilos para el botón de búsqueda */
+.search-button {
+    background-color: #4CAF50; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Elimina el borde del botón */
+    padding: 5px 10px; /* Añade un relleno al botón (ajústalo según tus preferencias) */
+    cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+    border-radius: 5px; /* Agrega bordes redondeados al botón */
+    font-size: 16px; /* Tamaño del texto del botón */
+    transition: background-color 0.3s ease; /* Agrega una transición suave para cambiar el color de fondo */
+}
+
+/* Estilo para cambiar el color de fondo cuando el cursor está sobre el botón */
+.search-button:hover {
+    background-color: #45a049; /* Color de fondo diferente al pasar por encima */
+}
+
+/* Estilo para cambiar el color de fondo cuando el botón está presionado */
+.search-button:active {
+background-color: #3e8e41; /* Color de fondo diferente cuando el botón está presionado */
+}
+/* Estilos para el contenedor del botón de búsqueda */
+.search {
+    display: flex; /* Muestra los elementos en línea */
+    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
+    max-width: 300px; /* Establece un ancho máximo para el contenedor */
+    justify-content:center; /* Alinea los elementos a la derecha */
+    margin-right: 30px;
+    margin-top: 30px;
+    margin-left: auto; /* Mueve el contenedor hacia la derecha */
+}
+.search_input{
+    min-width: auto;
+}
