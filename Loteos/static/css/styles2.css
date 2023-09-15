@@ -61,6 +61,7 @@ body {
     padding-top: 5px;
     padding-bottom: 5px;
     box-shadow: 0px 0px 20px grey;
+    margin-top: 20%;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -117,29 +118,39 @@ footer i{
 
 
 .lote-info {
-    background-color: #9e9494;
-    color: azure;
-    padding: 10px;
+    background-color: #f2f2f2; /* Cambia el color de fondo */
+    color: #333; /* Cambia el color del texto */
+    padding: 20px; /* Aumenta el espaciado interior para un aspecto más limpio */
     margin: 0 auto; /* Esto centrará horizontalmente el contenedor */
     max-width: 800px; /* Establece un ancho máximo para el párrafo */
     text-align: justify;
-    margin-bottom: 20%;
+    border: 1px solid #ccc; /* Agrega un borde alrededor del contenedor */
+    border-radius: 5px; /* Añade esquinas redondeadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega una ligera sombra */
+    margin-bottom: 5%; /* Ajusta el margen inferior según sea necesario */
+    line-height: 1.6; /* Aumenta el espaciado entre líneas para mejorar la legibilidad */
 }
+
 
 
 #image-container {
     text-align: center; /* Centra la imagen horizontalmente */
     margin: 0 auto; /* Centra el contenedor horizontalmente */
-    max-width: 800px; /* Establece un ancho máximo para la imagen */
+    max-width: 800px; /* Establece un ancho máximo para el contenedor */
 }
+
 #image_lote {
     width: 100%; /* La imagen ocupará todo el ancho del contenedor */
-    max-height: 30%; /* Establece una altura máxima para la imagen */
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    margin-bottom: 30px;
+    max-height: 400px; /* Establece una altura máxima para la imagen */
+    border: 1px solid #ccc; /* Agrega un borde ligero a la imagen */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave a la imagen */
+    border-radius: 5px; /* Añade esquinas redondeadas a la imagen */
+    margin-bottom: 30px; /* Agrega espacio inferior para separar las imágenes */
 }
+
+
+
+
 /* Estilos para el contenedor del botón de búsqueda */
 .search {
     display: flex; /* Muestra los elementos en línea */
@@ -189,4 +200,64 @@ background-color: #3e8e41; /* Color de fondo diferente cuando el botón está pr
 .estado_vendido{
     text-align: center;
     background-color: #d12424;
+}
+#boton_volver_abajo {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    position: relative; /* Cambiamos la posición a relativa */
+    left: 50%; /* Centramos horizontalmente */
+    transform: translateX(-50%); /* Centramos el botón correctamente en relación con su ancho */
+    margin-bottom: 20%; /* Añadimos un margen inferior para separar del contenido */
+}
+
+#boton_volver_abajo:hover {
+    background-color: #45a049;
+}
+
+#boton_volver_abajo:active {
+    background-color: #3e8e41;
+}
+
+#boton_volver_abajo a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+
+
+
+
+
+/* Estilo para el botón de búsqueda en buscar_lote.html */
+.search-button-buscar-lote {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    margin-top: 0px;
+    padding: 5px 10px;
+    margin-left: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Cambiar el color de fondo cuando el cursor está sobre el botón */
+.search-button-buscar-lote:hover {
+    background-color: #45a049;
+}
+
+/* Cambiar el color de fondo cuando el botón está presionado */
+.search-button-buscar-lote:active {
+    background-color: #3e8e41;
+}
+.search-button-buscar-lote a{
+    text-decoration: none;
+    color: aliceblue;
 }
