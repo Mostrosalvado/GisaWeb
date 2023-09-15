@@ -1,0 +1,23 @@
+{% extends "Lotes.html" %}
+
+{% block content %}
+    {% if lote_encontrado %}
+        <h4 id="nombre_lote">Lote: {{ lote_encontrado.id_lote }}</h4>
+        <div id="image-container">
+            <img src="{{ lote_encontrado.image.url }}" alt="Imagen del lote" id="image_lote">
+        </div>
+        {% if lote_encontrado.public %}
+            <h3 class="estado_disponible">Estado: Disponible</h3>
+        {% else %}
+            <h3 class="estado_vendido">Estado: Vendido</h3>
+        {% endif %}
+        </br>
+        <div class="lote-info">
+            <p id="content_lote">{{ lote_encontrado.content|safe}}</p>
+        </div>
+        
+    {% else %}
+        <p>No se encontró el lote.</p>
+    {% endif %}
+{% endblock %}
+

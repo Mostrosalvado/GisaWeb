@@ -106,6 +106,40 @@ footer i{
 }
 
 
+
+
+#nombre_lote{
+    text-align:center;
+    font-size:xx-large;
+    text-decoration: underline;
+    margin-bottom: 80px;
+}
+
+
+.lote-info {
+    background-color: #9e9494;
+    color: azure;
+    padding: 10px;
+    margin: 0 auto; /* Esto centrará horizontalmente el contenedor */
+    max-width: 800px; /* Establece un ancho máximo para el párrafo */
+    text-align: justify;
+    margin-bottom: 20%;
+}
+
+
+#image-container {
+    text-align: center; /* Centra la imagen horizontalmente */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    max-width: 800px; /* Establece un ancho máximo para la imagen */
+}
+#image_lote {
+    width: 100%; /* La imagen ocupará todo el ancho del contenedor */
+    max-height: 30%; /* Establece una altura máxima para la imagen */
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
 /* Estilos para el contenedor del botón de búsqueda */
 .search {
     display: flex; /* Muestra los elementos en línea */
@@ -146,4 +180,13 @@ background-color: #3e8e41; /* Color de fondo diferente cuando el botón está pr
 }
 .search_input{
     min-width: auto;
+}
+
+.estado_disponible{
+    text-align: center;
+    background-color: #4CAF50;
+}
+.estado_vendido{
+    text-align: center;
+    background-color: #d12424;
 }

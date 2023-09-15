@@ -24,18 +24,25 @@
             </li>
         </ul>
     </div>
-    <li class="search">
-        <input class="search_input" placeholder="Buscar Lote">
-        <button type="submit" class="search-button">Ir</button>
-    </li>
+    <form method="post" action="{% url 'Buscar_lote' id_lote=1 %}" id="barra" class="search">
+        {% csrf_token %}
+        <input type="text" name="id_lote" placeholder="ID de lote..." class="search_input">
+        <button type="submit" class="search-button">Buscar</button>
+    </form>
 
-<div class="contenedor-principal">
+
+
+
+{% block content  %}
+    <div class="contenedor-principal">
     <div>
         <img class="mapa" src="{% static 'images/lotes.png' %}" alt="Lotes"/>
     </div>
 
     </div>
 </div>
+{% endblock  %}
+
 
     <footer class='footer'>
         <div>
