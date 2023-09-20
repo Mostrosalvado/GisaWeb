@@ -3,6 +3,8 @@ from Obras.models import Category, Obra
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
+from rest_framework import generics
+from .serializer_obras import ObraSerializer
 
 
 # Create your views here.
@@ -43,3 +45,16 @@ def category(request, category_id):
         'obras': obras,
         'title': category.name
     })
+
+class LoteListCreateView(generics.ListCreateAPIView):
+        queryset = Obra.objects.all()
+        serializer_class = ObraSerializer
+
+
+class LoteIdRetrieveView(generics.RetrieveAPIView):
+        queryset = Obra.objects.all()
+        serializer_class = ObraSerializer
+
+        def get_object(self):
+                id_obra = self.kwargs['id']
+                return get_object_or_404(Obra, id=id_obra)

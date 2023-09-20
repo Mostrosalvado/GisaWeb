@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Loteos',
     'Obras',
     'ckeditor',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -153,3 +154,13 @@ CKEDITOR_CONFIGS = {
 #Prueba django para el envio de correos
 #Modificar para produccion
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}

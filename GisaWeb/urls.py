@@ -23,6 +23,7 @@ urlpatterns = [
     path('', include('Home.urls')),
     path('', include('Obras.urls')),
     path('', include('Loteos.urls')),
+    path('api-auth/', include('rest_framework.urls'))
 ]
 
 
