@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from .models import Lote
 from rest_framework import generics
 from .serializer_lote import LoteSerializer
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 
 
@@ -29,11 +31,15 @@ def BuscaLote(request, id_lote=None):
 class LoteListCreateView(generics.ListCreateAPIView):
         queryset = Lote.objects.all()
         serializer_class = LoteSerializer
+        authentication_classes = [SessionAuthentication, BasicAuthentication]
+        permission_classes = [IsAuthenticated]
 
 
 class LoteIdRetrieveView(generics.RetrieveAPIView):
         queryset = Lote.objects.all()
         serializer_class = LoteSerializer
+        authentication_classes = [SessionAuthentication, BasicAuthentication]
+        permission_classes = [IsAuthenticated]
 
         def get_object(self):
                 id_lote = self.kwargs['id_lote']

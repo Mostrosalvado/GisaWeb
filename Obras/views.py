@@ -1,10 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from Obras.models import Category, Obra
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.core.paginator import Paginator
 from rest_framework import generics
 from .serializer_obras import ObraSerializer
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 
 # Create your views here.
@@ -46,15 +47,20 @@ def category(request, category_id):
         'title': category.name
     })
 
-class LoteListCreateView(generics.ListCreateAPIView):
+class ObraListCreateView(generics.ListCreateAPIView):
         queryset = Obra.objects.all()
         serializer_class = ObraSerializer
+        authentication_classes = [SessionAuthentication, BasicAuthentication]
+        permission_classes = [IsAuthenticated]
 
 
-class LoteIdRetrieveView(generics.RetrieveAPIView):
+class ObraIdRetrieveView(generics.RetrieveAPIView):
         queryset = Obra.objects.all()
         serializer_class = ObraSerializer
+        authentication_classes = [SessionAuthentication, BasicAuthentication]
+        permission_classes = [IsAuthenticated]
 
         def get_object(self):
                 id_obra = self.kwargs['id']
                 return get_object_or_404(Obra, id=id_obra)
+        
