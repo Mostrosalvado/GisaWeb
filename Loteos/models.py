@@ -13,6 +13,7 @@ class Lote (models.Model):
         verbose_name="id_lote"
     )
         content=RichTextField (verbose_name="Contenido")
+        price=models.IntegerField(verbose_name="Precio", default=0)
         image= models.ImageField(default='Null' , verbose_name="Imagen",upload_to='loteos' )
         user = models.ForeignKey(User,editable=True, verbose_name="Usuario" , on_delete=models.CASCADE)
         public= models.BooleanField(verbose_name="Publicado?")

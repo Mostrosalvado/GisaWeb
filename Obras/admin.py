@@ -8,6 +8,8 @@ class CategoryAdmin (admin.ModelAdmin):
 
 class ObrasAdmin (admin.ModelAdmin):
     readonly_fields=('created_at', 'updated_at')
+    list_filter = ('category',)  # Filtros 
+    search_fields = ('title', )
 
     def save_model(self,request,obj,form,change):
         if not obj.user_id:

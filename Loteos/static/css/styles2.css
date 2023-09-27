@@ -115,6 +115,12 @@ footer i{
     text-decoration: underline;
     margin-bottom: 80px;
 }
+#precio{
+    text-align:center;
+    font-size:xx-large;
+    text-decoration: underline;
+    margin-bottom: 80px;
+}
 
 
 .lote-info {

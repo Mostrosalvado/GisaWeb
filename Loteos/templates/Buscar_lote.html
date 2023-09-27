@@ -6,6 +6,7 @@
             <a href="{% url 'lote' %}" >Volver</a>
         </button>
         <h4 id="nombre_lote">Lote: {{ lote_encontrado.id_lote }}</h4>
+        <h4 id="precio">Precio: Usd. {{ lote_encontrado.price }}</h4>
 
         {% if lote_encontrado.public %}
             <h3 class="estado_disponible">Estado: Disponible</h3>

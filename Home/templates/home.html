@@ -7,7 +7,7 @@
     <hr/>
     {% if messages%}
         {% for message in messages %}
-            <div class="alert-success alert-warning">
+            <div class="alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'warning' %}alert-warning{% endif %}">
                 {{message}}
             </div>
         {% endfor%}

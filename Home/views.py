@@ -111,7 +111,7 @@ def register (request):
             register_form = RegisterForm(request.POST)
             if register_form.is_valid():
                 register_form.save()
-                messages.success(request,'Te has registrado correctamente!!')
+                messages.success(request,'Te has registrado correctamente!!')   
                 return redirect('home')
             else:
                 messages.warning(request,'Hubo un problema, intenta nuevamente')
