@@ -61,7 +61,6 @@ body {
     padding-top: 5px;
     padding-bottom: 5px;
     box-shadow: 0px 0px 20px grey;
-    margin-top: 20%;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -73,17 +72,24 @@ body {
 }
 
 .footer a{
-    margin-right: 20px;
+    margin-right: 0px;
 }
 footer i{
-    font-size: 30px; /* Ajusta el tamaño deseado */
+    font-size: 25px; 
+    padding-top: 10px;
 }
+
+
+
 /* Estilos para los links */
 .link {
     color: rgb(76, 103, 141);
     text-decoration: none;
+    margin: 20px;
     
 }
+
+
 /* Estilo CSS para mostrar los elementos de redes sociales */
 .social li {
     background-color: rgb(255, 255, 255);
@@ -267,3 +273,4 @@ background-color: #3e8e41; /* Color de fondo diferente cuando el botón está pr
     text-decoration: none;
     color: aliceblue;
 }
+

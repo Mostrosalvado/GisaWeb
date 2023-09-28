@@ -93,7 +93,7 @@ def login_page (request):
             user = authenticate(request , username=username,password=password)
             if user is not None:
                 login(request,user)
-                return redirect('home')
+                return redirect('obras')
             else:
                 messages.warning(request,'No te has identificado correctamente :( ')
 

@@ -31,8 +31,8 @@ def obras_user(request):
     # Sacar obras del usuario logueado
     obras = Obra.objects.filter(user=request.user)
 
-    return render(request, "home.html", {
-        'title': 'Inicio',
+    return render(request, "obras.html", {
+        'title': 'Mi obra',
         'obras': obras
     })
 

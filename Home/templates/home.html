@@ -19,15 +19,10 @@
         <h2 id='ingresa'> 
         <a href='login' id=ingresa >Ingresa para ver más</a> 
         </h2>
-    {% endif %}
-
-{% comment "" %}
-Aca van el video y una descripcion de la empresa 
-{% endcomment %}
-</hr>
-
-
-    <div class="video-container">
+        {% comment "" %}
+            Aca van el video y una descripcion de la empresa 
+        {% endcomment %}
+        <div class="video-container">
         <video controls class="video">
             <source src="{% static 'images/dummy Video.mp4' %}" type="video/mp4">
             Tu navegador no admite la reproducción de videos.
@@ -41,6 +36,9 @@ Phasellus arcu sem, laoreet faucibus sapien rutrum, tincidunt congue lacus. Sed 
 Maecenas nec dolor molestie, vehicula libero vitae, laoreet lacus. Cras vel pharetra metus. Sed sed quam condimentum felis ullamcorper pharetra. Pellentesque nulla nisi, pulvinar at eros placerat, viverra tristique tellus. Suspendisse venenatis ex ultrices arcu hendrerit finibus..</p>
         </div>
     </div>
+    {% endif %}
+
+
 
 <hr class="separador">
 {% comment "" %}

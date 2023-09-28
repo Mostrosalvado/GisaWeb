@@ -175,21 +175,23 @@ input[type="submit"]:hover {
 }
 
 .footer a{
-    margin-right: 20px;
+    margin-right: 0px;
 }
 footer i{
     font-size: 30px; /* Ajusta el tamaño deseado */
 }
 
 
+
 /* Estilos para los links */
 .link {
     color: rgb(76, 103, 141);
     text-decoration: none;
+    margin: 20px;
     
 }
 
-/* Estilos para las obras */
+
 /* Estilos para las obras */
 .obra-item {
     max-width: 33.33%;
@@ -213,6 +215,12 @@ footer i{
     border: 1px solid #ccc;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.obra-item img:hover{
+    transition: 01s;
+    transform: scale(1.2);
 }
 
 /* Limpiar el flujo de elementos para evitar problemas de alineación */
@@ -368,6 +376,12 @@ footer i{
     border: 1px solid #ccc;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.lote-item img:hover{
+    transform: scale(1.2);
+    transition: 01s;
 }
 
 /* Limpiar el flujo de elementos para evitar problemas de alineación */
@@ -393,4 +407,47 @@ footer i{
     background-color: transparent; /* Elimina el fondo gris claro */
     padding: 0; /* Elimina el espacio alrededor del texto */
 }
+
+/*estilos para sobre nosotros*/
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los títulos de sección */
+section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Estilos para los párrafos de sección */
+section p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilos para el botón "Contáctanos" */
+#contactButton {
+    background-color: #2ba977;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    
+    /* Centrar horizontalmente el botón */
+    display: block;
+    margin: 0 auto;
+}
+
+#contactButton:hover {
+    background-color: #1f7e58;
+}
+
 
