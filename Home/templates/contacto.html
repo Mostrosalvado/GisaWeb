@@ -5,8 +5,8 @@
 
 
 {% block content%}
-    <h1>Envianos un correo con tu consulta: </h1>
-    <form method ="POST" action = '{% url 'contacto' %}'>
+    <h1 class='titulo_home'>Envianos un correo con tu consulta: </h1>
+    <form method ="POST" action = "{% url 'contacto' %}">
         {% csrf_token %}
 
         {% for field in form %}

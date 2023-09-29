@@ -8,11 +8,14 @@
         <h4 id="nombre_lote">Lote: {{ lote_encontrado.id_lote }}</h4>
         <h4 id="precio">Precio: Usd. {{ lote_encontrado.price }}</h4>
 
-        {% if lote_encontrado.public %}
-            <h3 class="estado_disponible">Estado: Disponible</h3>
-        {% else %}
-            <h3 class="estado_vendido">Estado: Vendido</h3>
-        {% endif %}
+
+        <h3 class="{% if lote_encontrado.status == 'Disponible' %} estado_disponible {% else %} estado_vendido {% endif %}">
+            Estado: {% if lote_encontrado.status == 'Disponible' %} Disponible {% else %} Vendido {% endif %}
+        </h3>
+
+
+
+
 
         <div id="image-container">
             <img src="{{ lote_encontrado.image.url }}" alt="Imagen del lote" id="image_lote">

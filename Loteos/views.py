@@ -4,6 +4,7 @@ from rest_framework import generics
 from .serializer_lote import LoteSerializer
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -26,6 +27,34 @@ def BuscaLote(request, id_lote=None):
         else:
                 # Si no es una solicitud POST, muestra el formulario vacío
                 return render(request, 'Lotes.html')
+        
+
+
+
+from django.http import HttpResponse
+
+def Mi_lote(request):
+        if request.user.is_authenticated:
+                lote = Lote.objects.filter(user=request.user).first()
+                if lote:
+                        return render(request, "Mi_lote.html", {
+                        'title': 'Mi Lote',
+                        'lote': lote
+                        })
+                else:
+                        no_lote_message = "No tienes ningún lote."
+                        return render(request, "Mi_lote.html", {
+                                'title': 'Mi Lote',
+                                'no_authenticated_message': no_lote_message
+        })
+        else:
+                # Si el usuario no está autenticado, configura una variable de contexto para mostrar un mensaje en la plantilla.
+                no_authenticated_message = "Debe iniciar sesión para acceder a esta página."
+                return render(request, "Lotes.html", {
+                'title': 'Mi Lote',
+                'no_authenticated_message': no_authenticated_message
+})
+
 
 
 class LoteListCreateView(generics.ListCreateAPIView):

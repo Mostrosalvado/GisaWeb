@@ -1,43 +1,34 @@
 {% extends 'layouts.html' %}
 
-{% block title%}{{title}}{% endblock%}
+{% block title %}{{ title }}{% endblock %}
 
-{% block content%}
-    <h1>{{title}}</h1>
-    
+{% block content %}
+    <h1 class="titulo_articulos">{{ title }}</h1>
 
-
-{% for obra in obras %}
-        {% if obra.public == True%}
-            <article class="obra-item">
+    {% for obra in obras %}
+        {% if obra.public == True %}
+            <article class="obra-item-categorias">
                 {% if obra.image_1.url %}
-                    <div class="image">
-                        <img src="{{ obra.image_1.url }}" alt="Imagen 1">
-                    </div>
+                    <img src="{{ obra.image_1.url }}" alt="Imagen 1">
                 {% endif %}
 
                 {% if obra.image_2.url %}
-                    <div class="image">
-                        <img src="{{ obra.image_2.url }}" alt="Imagen 2">
-                    </div>
+                    <img src="{{ obra.image_2.url }}" alt="Imagen 2">
                 {% endif %}
 
                 {% if obra.image_3.url %}
-                    <div class="image">
-                        <img src="{{ obra.image_3.url }}" alt="Imagen 3">
-                    </div>
+                    <img src="{{ obra.image_3.url }}" alt="Imagen 3">
                 {% endif %}
 
                 <div class="data">
                     <h2>{{ obra.title }}</h2>
                     <p>
                         {% for category in obra.category.all %}
-                            <a href="{% url 'categoria' category.id %}" class='link' >{{category}}</a>
+                            <a href="{% url 'categoria' category.id %}" class="link">{{ category }}</a>
                             {% if forloop.counter < obra.category.all|length %}
-                            {{'-'}}
-                        {% endif %}
-                        {% endfor%}
-
+                                {{ '-' }}
+                            {% endif %}
+                        {% endfor %}
                     </p>
                     <span class="date">{{ obra.created_at }}</span>
                     <p>{{ obra.content | safe }}</p>
@@ -47,32 +38,4 @@
             </article>
         {% endif %}
     {% endfor %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{% endblock%}
+{% endblock %}

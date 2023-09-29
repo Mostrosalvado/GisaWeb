@@ -338,7 +338,7 @@ footer i{
 .titulo_articulos{
     text-align:center;
     font-size:xx-large;
-    text-decoration: underline;
+    text-decoration: none;
     margin-bottom: 80px;
 }
 
@@ -400,8 +400,9 @@ footer i{
 /* Aplicar fondo gris claro al contenido de los lotes */
 .lote-item p {
     background-color: #f9f9f9; /* Fondo gris claro para el texto de los lotes */
-    padding: 10px; /* Espacio alrededor del texto */
+    padding: 5px; /* Espacio alrededor del texto */
     margin: 0; /* Elimina el margen predeterminado */
+    margin-top: 0px;
 }
 .obra-item:first-child .data p {
     background-color: transparent; /* Elimina el fondo gris claro */
@@ -450,4 +451,93 @@ section p {
     background-color: #1f7e58;
 }
 
+
+#titulo_obras{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+/* Estilos para las obras en Obras */
+.obra-item-obras {
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden; /* Agregamos overflow: hidden para evitar que las imágenes se desborden */
+}
+
+/* Utilizamos flexbox para alinear las imágenes horizontalmente */
+.image-obras {
+    display: flex;
+    flex-wrap: nowrap; /* Evita que las imágenes se envuelvan en una nueva línea */
+    justify-content: flex-start; /* Alinea las imágenes al principio */
+    gap: 10%; /* Espacio entre las imágenes */
+}
+
+/* Establece un ancho fijo y altura para las imágenes */
+.obra-item-obras .image-obras img {
+    width: auto;
+    height: 200px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+/* Aplica margen izquierdo solo a la primera imagen */
+.obra-item-obras .image-obras img:first-child {
+    margin-left: 30px; /* Ajusta la cantidad de margen izquierdo según tu preferencia */
+}
+
+
+.obra-item-obras img:hover {
+    transition: 0.1s;
+    transform: scale(1.2);
+}
+
+/* Establece un ancho fijo para el contenedor de imágenes */
+.obra-item-obras .image-obras {
+    width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+
+
+
+/* Estilos para las categorías */
+.obra-item-categorias {
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden; /* Agregamos overflow: hidden para evitar que las imágenes se desborden */
+}
+
+.obra-item-categorias img {
+    display: inline-block; /* Hace que las imágenes se muestren en línea y estén una al lado de la otra */
+    height: 200px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px; /* Agrega un margen a la derecha para separar las imágenes */
+}
+
+.obra-item-categorias img:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento */
+}
+
+.obra-item-categorias img:hover {
+    transition: 0.1s;
+    transform: scale(1.2);
+}
 

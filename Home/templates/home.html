@@ -45,7 +45,9 @@ Maecenas nec dolor molestie, vehicula libero vitae, laoreet lacus. Cras vel phar
 Aca van las obras 
 {% endcomment %}
 
-<h1 class="titulo_articulos">Obras</h1>
+<h1 class="titulo_articulos">
+    <a class='link' href= "{% url 'login' %}">Obras</a>
+</h1>
 
     <article class="obras_home">
     {% for obra in obras %}
@@ -96,7 +98,9 @@ Aca van las obras
 Aca van los lotes 
 {% endcomment %}
 <hr class="separador">
-<h1 class="titulo_articulos">Lotes</h1>
+<h1 class="titulo_articulos">
+    <a class='link' href="{% url 'lote' %}">Lotes</a>    
+</h1>
 
 
 <article class="lotes_home">
@@ -110,8 +114,8 @@ Aca van los lotes
                 {% endif %}
 
                 <div class="data">
-                    <h2>Lote:{{ lote.id_lote }}</h2>
-
+                    <h2>Lote: {{ lote.id_lote }}</h2>
+                    <h3>Estado: {{lote.status}}</h3>
                     <span class="date">{{ obra.created_at }}</span>
                     <p>{{ lote.content | safe }}</p>
                     <hr class="separador">
@@ -124,21 +128,6 @@ Aca van los lotes
     {% endfor %}
 
     </article>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

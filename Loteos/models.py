@@ -7,12 +7,17 @@ from django.core.validators import MaxValueValidator
 
     
 class Lote (models.Model):
+        ESTADO_CHOICES = (
+        ('Vendido', 'Vendido'),
+        ('Disponible', 'Disponible'),
+    )
         id_lote = models.IntegerField(
         primary_key=True,
         validators=[MaxValueValidator(limit_value=102)],
         verbose_name="id_lote"
     )
         content=RichTextField (verbose_name="Contenido")
+        status = models.CharField(max_length=10, choices=ESTADO_CHOICES, default='Disponible', verbose_name="Estado")
         price=models.IntegerField(verbose_name="Precio", default=0)
         image= models.ImageField(default='Null' , verbose_name="Imagen",upload_to='loteos' )
         user = models.ForeignKey(User,editable=True, verbose_name="Usuario" , on_delete=models.CASCADE)

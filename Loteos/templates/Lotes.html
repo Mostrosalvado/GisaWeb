@@ -16,14 +16,16 @@
     <div id="menu">
         <ul>
             <li><a href="/home/">Gisa</a></li>
-            <li><a href="#">Mi lote</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Salir</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'mi_lote' %}">Mi lote</a></li>
+                <li><a href="#">Salir</a></li>
+            {% endif %}
             <li class="social">
                 <a href="https://www.instagram.com/puertodelsol_as/"><i class="ri-instagram-fill"></i></a>
             </li>
         </ul>
     </div>
+
     <form method="post" action="{% url 'Buscar_lote' id_lote=1 %}" id="barra" class="search">
         {% csrf_token %}
         <input type="text" name="id_lote" placeholder="ID de lote..." class="search_input">
@@ -47,7 +49,7 @@
     <footer class='footer'>
         <div>
             <h4>Puerto del sol - Todos los derechos reservados 
-                <a class='link' href="{% url 'trabaja' %}">Trabaja con nosotros</a>
+                <a class='link' href="https://docs.google.com/forms/d/1vlrle8fzj0kAQbhZvi5rHxlUZMdBi1b9Iygc-3sQkNw/edit" target="_blank">Trabaja con nosotros</a>
                 <a class='link' href="{% url 'contacto' %}">Contáctanos</a>
                 <a href="https://www.instagram.com/puertodelsol_as/" class='link'><i class="ri-instagram-fill"></i></a>
 
