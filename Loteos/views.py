@@ -1,10 +1,11 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Lote
 from rest_framework import generics
 from .serializer_lote import LoteSerializer
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required 
+from django.contrib.auth import logout
 
 
 
@@ -55,6 +56,11 @@ def Mi_lote(request):
                 'no_authenticated_message': no_authenticated_message
 })
 
+
+@login_required(login_url="login")
+def logout_user (request):
+        logout(request)
+        return redirect ('home')
 
 
 class LoteListCreateView(generics.ListCreateAPIView):

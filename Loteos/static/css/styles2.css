@@ -213,33 +213,7 @@ background-color: #3e8e41; /* Color de fondo diferente cuando el botón está pr
     text-align: center;
     background-color: #d12424;
 }
-#boton_volver_abajo {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    position: relative; /* Cambiamos la posición a relativa */
-    left: 50%; /* Centramos horizontalmente */
-    transform: translateX(-50%); /* Centramos el botón correctamente en relación con su ancho */
-    margin-bottom: 20%; /* Añadimos un margen inferior para separar del contenido */
-}
 
-#boton_volver_abajo:hover {
-    background-color: #45a049;
-}
-
-#boton_volver_abajo:active {
-    background-color: #3e8e41;
-}
-
-#boton_volver_abajo a {
-    text-decoration: none;
-    color: aliceblue;
-}
 
 
 
@@ -272,5 +246,42 @@ background-color: #3e8e41; /* Color de fondo diferente cuando el botón está pr
 .search-button-buscar-lote a{
     text-decoration: none;
     color: aliceblue;
+}
+
+.alert-warning{
+    text-align: center;
+    background-color: #d12424;
+    width: fit-content;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el botón "Contáctanos" */
+#contactButton {
+    background-color: #2ba977;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+
+    
+    /* Centrar horizontalmente el botón */
+    display: block;
+    margin:0 auto;
+}
+
+#contactButton:hover {
+    background-color: #1f7e58;
+}
+
+.clearfix {
+    padding-bottom: 20%;
+}
+
+.titulo{
+    text-align:center;
+    font-size:xx-large;
 }
 

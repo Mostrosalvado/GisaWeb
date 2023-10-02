@@ -2,9 +2,10 @@
 
 {% block content %}
     {% if no_authenticated_message %}
-        <div class="alert alert-warning">
+        <div class="alert-warning">
             {{ no_authenticated_message }}
         </div>
+        <button id="contactButton">Contáctanos</button>
     {% endif %}
 
 
@@ -12,14 +13,20 @@
 
 
     {% if lote %}
-    <h1>Detalles del Lote</h1>
-    <p>ID de Lote: {{ lote.id_lote }}</p>
-    <p>Contenido: {{ lote.content }}</p>
-    <p>Estado: {{ lote.status }}</p>
-    <p>Precio: {{ lote.price }}</p>
-    <p>Imagen: <img src="{{ lote.image.url }}" alt="Imagen del lote"></p>
-    <!-- Otros detalles del lote que desees mostrar -->
-    {% else %}
-    <p>No tienes ningún lote.</p>
+        <button class="search-button-buscar-lote"> 
+            <a href="{% url 'lote' %}" >Volver</a>
+        </button>
+        <h1 class="titulo">Detalles del Lote</h1>
+        <p id="nombre_lote">ID de Lote: {{ lote.id_lote}}</p>
+        <div class="lote-info">
+            <p id="content_lote" >{{ lote.content|safe }}</p>
+        </div>
+        <p class="{% if lote_encontrado.status == 'Disponible' %} estado_disponible {% else %} estado_vendido {% endif %}">Estado: {{ lote.status }}</p>
+        <p id="precio" >Precio: {{ lote.price }}</p>
+        <div id="image-container">
+            <img id="image_lote" src="{{ lote.image.url }}" alt="Imagen del lote">
+        </div>
+        <div class="clearfix"></div>
+
     {% endif %}
 {% endblock %}

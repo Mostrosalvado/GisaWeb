@@ -9,22 +9,7 @@ from rest_framework.permissions import IsAuthenticated
 
 
 # Create your views here.
-'''
-def obras (request):
-    
-    #Sacar obras
-    obras=Obra.objects.all()
-    #Paginar obras
-    paginacion=Paginator(obras,3)
-    #Obtener numero de pagina
-    page = request.GET.get('page')
-    page_obras= paginacion.get_page(page)
 
-    return render(request, "home.html",{
-        'title':'Obras',
-        'obras':page_obras
-    })
-'''
 
 @login_required(login_url="login")
 def obras_user(request):

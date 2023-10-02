@@ -10,6 +10,7 @@
     </div>
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles2.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="{%static 'script/script.js'%}"></script>
 </head>
 
 <body>
@@ -18,7 +19,7 @@
             <li><a href="/home/">Gisa</a></li>
             {% if user.is_authenticated %}
                 <li><a href="{% url 'mi_lote' %}">Mi lote</a></li>
-                <li><a href="#">Salir</a></li>
+                <li><a href="{% url 'salir' %}">Salir</a></li>
             {% endif %}
             <li class="social">
                 <a href="https://www.instagram.com/puertodelsol_as/"><i class="ri-instagram-fill"></i></a>
@@ -56,6 +57,7 @@
             </h4>
         </div>
     </footer>
+
 
 </body>
 </html>
