@@ -18,14 +18,17 @@
         </button>
         <h1 class="titulo">Detalles del Lote</h1>
         <p id="nombre_lote">ID de Lote: {{ lote.id_lote}}</p>
-        <div class="lote-info">
-            <p id="content_lote" >{{ lote.content|safe }}</p>
-        </div>
-        <p class="{% if lote_encontrado.status == 'Disponible' %} estado_disponible {% else %} estado_vendido {% endif %}">Estado: {{ lote.status }}</p>
         <p id="precio" >Precio: {{ lote.price }}</p>
+        <p class="{% if lote.status == 'Disponible' %} estado_disponible {% else %} estado_vendido {% endif %}">
+            Estado: {{ lote.status }}
+        </p>
         <div id="image-container">
             <img id="image_lote" src="{{ lote.image.url }}" alt="Imagen del lote">
         </div>
+        <div class="lote-info">
+            <p id="content_lote" >{{ lote.content|safe }}</p>
+        </div>
+
         <div class="clearfix"></div>
 
     {% endif %}
