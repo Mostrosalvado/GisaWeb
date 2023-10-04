@@ -5,7 +5,15 @@
         <button class="search-button-buscar-lote"> 
             <a href="{% url 'lote' %}" >Volver</a>
         </button>
+
+
         <h4 id="nombre_lote">Lote: {{ lote_encontrado.id_lote }}</h4>
+        {% if lote_encontrado.status == 'Disponible'%}
+            <button id="contactButton">
+                <a id="boton_comprar" href="{% url 'contacto' %}" >Comprar Lote</a>
+            </button>
+        {% endif%}
+
         <h4 id="precio">Precio: Usd. {{ lote_encontrado.price }}</h4>
 
 

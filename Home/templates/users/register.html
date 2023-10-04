@@ -5,12 +5,12 @@
 
 {% block content %}
 
-    <form method ="POST" action = '{% url 'register' %}'>
+    <form method ="POST" action = "{% url 'register' %}">
         {% csrf_token %}
 
         {% if messages%}
         {% for message in messages %}
-            <div class="alert-warning alert-success">
+            <div class="{% if message == 'messages.success' %} alert-success {% else %} alert-warning {% endif %}">
                 {{message}}
             </div>
         {% endfor%}

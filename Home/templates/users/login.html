@@ -3,8 +3,15 @@
 
 {% block title%}{{title}}{% endblock%}
 
+
+
 {% block content %}
     <h1 class="titulo_articulos">{{title}}</h1>
+
+    <div class="titulo_articulos">
+        <h2  >Si no te registraste hacé click</h2><a id="link-aca" href="{% url 'register' %}">Acá</a>
+    </div>
+
     {{register_form.errors}}
 
 

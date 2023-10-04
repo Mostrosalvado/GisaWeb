@@ -115,26 +115,31 @@ nav {
     padding-bottom: 2000px; /* Ajustar el espacio entre el contenido y el footer */
 }
 
-/* Estilos para el formulario */
+
+/* Estilo base para todos los formularios */
 form {
-    width: 300px;
+    max-width: 300px;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f7f7f7;
+    text-align: center;
+    margin-top: 20px;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px; /* Aumenta el espacio entre los labels y los inputs */
+    text-align: left;
 }
 
 input[type="text"],
-input[type="password"] {
-    width: 100%;
+input[type="password"],
+input[type="email"] {
+    width: calc(100% - 20px);
     padding: 8px;
-    margin-bottom: 10px;
+    margin: 0 auto 10px auto; /* Añade espacio en la parte inferior de los inputs */
     border: 1px solid #ccc;
     border-radius: 4px;
 }
@@ -147,11 +152,38 @@ input[type="submit"] {
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
+    margin-top: 10px; /* Añade espacio en la parte superior del botón de submit */
 }
 
 input[type="submit"]:hover {
     background-color: #45a049;
 }
+
+/* Estilo específico para el formulario de contacto con textarea redimensionable */
+textarea {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin: 0 auto 10px auto; /* Añade espacio en la parte inferior del textarea */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    height: 150px;
+    display: block;
+}
+
+/* Estilo para el botón "login" */
+#login-form input[type="submit"] {
+    background-color: #007BFF;
+}
+
+
+/* Estilo para el enlace "Acá" */
+#link-aca {
+    color: #007BFF; /* Cambia el color del enlace para el formulario de login */
+    text-decoration: none;
+    margin-left: 5px; /* Añade un pequeño espacio entre el enlace y el texto anterior */
+}
+
 
 /* Estilos para el footer */
 .footer {
@@ -191,6 +223,13 @@ footer i{
     
 }
 
+#link-aca{
+    color: rgb(76, 103, 141);
+    text-decoration: none;
+    margin: 20px;
+    
+}
+
 
 /* Estilos para las obras */
 .obra-item {
@@ -215,7 +254,6 @@ footer i{
     border: 1px solid #ccc;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    cursor: pointer;
 }
 
 .obra-item img:hover{
@@ -252,8 +290,11 @@ footer i{
 }
 
 .alert-warning{
-    background: red;
-    min-height: 30px;
+    padding: 20px;
+    background: #ff0000;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 
@@ -376,7 +417,7 @@ footer i{
     border: 1px solid #ccc;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    cursor: pointer;
+
 }
 
 .lote-item img:hover{
@@ -488,7 +529,6 @@ section p {
     border: 1px solid #ccc;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    cursor: pointer;
     margin-bottom: 50px;
     margin-top: 50px;
 }
@@ -528,7 +568,6 @@ section p {
     border: 1px solid #ccc;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    cursor: pointer;
     margin-right: 10px; /* Agrega un margen a la derecha para separar las imágenes */
 }
 

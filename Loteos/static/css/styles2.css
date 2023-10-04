@@ -256,7 +256,15 @@ background-color: #3e8e41; /* Color de fondo diferente cuando el botón está pr
     margin: 0 auto;
     margin-bottom: 20px;
 }
-
+.no_lote{
+    text-align: center;
+    color: #ffffff;
+    background-color: #d12424;
+    width: fit-content;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
 /* Estilos para el botón "Contáctanos" */
 #contactButton {
     background-color: #2ba977;
@@ -285,3 +293,7 @@ background-color: #3e8e41; /* Color de fondo diferente cuando el botón está pr
     font-size:xx-large;
 }
 
+#boton_comprar{
+    text-decoration: none;
+    color: white;
+}

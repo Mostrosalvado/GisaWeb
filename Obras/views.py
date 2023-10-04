@@ -11,6 +11,16 @@ from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 
 
+def obras(request):
+    # Sacar obras 
+    obras = Obra.objects.all() 
+
+    return render(request, "obras_all.html", {
+        'title': 'Obras',
+        'obras': obras
+    })
+
+
 @login_required(login_url="login")
 def obras_user(request):
     # Sacar obras del usuario logueado

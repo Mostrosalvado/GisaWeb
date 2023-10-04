@@ -11,7 +11,11 @@
 
         {% for field in form %}
             <label>{{ field.label }}</label>
-            {{ field }}
+            {% if field.name == 'message' %}
+                <textarea name="{{ field.name }}" placeholder="Escribe tu mensaje aquí"></textarea>
+            {% else %}
+                {{ field }}
+            {% endif %}
         {% endfor %}
 
         <input type='submit' value='Enviar'/>
