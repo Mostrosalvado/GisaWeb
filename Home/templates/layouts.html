@@ -3,13 +3,16 @@
 <head>
     <title>
         {% block title %}
-        
+        <!-- Título de la página (puede ser sobrescrito por bloques hijos) -->
         {% endblock %}
     </title>
 
     {% load static %}
+    <!-- Enlace al archivo de estilos CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <!-- Enlace a la fuente de iconos RemixIcon -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Inclusión del archivo de script JavaScript -->
     <script src="{%static 'script/script.js'%}"></script>
 
     
@@ -18,6 +21,7 @@
 <body>
     <div id="logotipo">
             <a href="{% url 'home' %}">
+            <!-- Logotipo de la empresa -->
             <img src="{% static 'images/Gisa.png'%}"/>
             </a>
     </div>
@@ -25,6 +29,7 @@
     <nav>
         <ul class="menu">
             {% if user.email%}
+            <!-- Menú para usuarios autenticados -->
             <li>
             <i class="ri-building-4-fill"></i>
             <a href="{% url 'obras' %}">Mi Obra</a>
@@ -42,6 +47,7 @@
             <a href="{% url 'salir' %}">Salir</a>
             </li>
             {% else%}
+            <!-- Menú para usuarios no autenticados -->
             <li>
             <i class="ri-home-3-fill"></i>
             <a href="{% url 'home' %}">Inicio</a>
@@ -77,7 +83,7 @@
 
 
     {% block content%}
-
+    <!-- Contenido principal (puede ser sobrescrito por bloques hijos) -->
 
     {% endblock %}
 
@@ -93,6 +99,7 @@
     <footer class='footer'>
         <div>
             <h4 id='texto_footer'>Gisa s.a.  Todos los derechos reservados 
+                <!-- Enlaces de "Trabaja con nosotros" y "Contáctanos" en el pie de página -->
                 <a class='link' href="https://forms.gle/yNaXYgjHYANxqY6g9" target="_blank">Trabaja con nosotros</a>  
                 <a class='link' href="{% url 'contacto' %}">Contáctanos</a>
             </h4>

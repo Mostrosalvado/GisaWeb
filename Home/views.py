@@ -10,18 +10,19 @@ from Loteos.models import Lote
 
 # Create your views here.
 
+# Vista para la página de inicio
 def home (request):
-    #Sacar obras
+    # Obtener todas las obras
     obras=Obra.objects.all()
-    #Paginar obras
+    # Paginación de obras (mostrar 3 por página)
     paginacion=Paginator(obras,3)
     #Obtener numero de pagina
     page = request.GET.get('page')
     page_obras= paginacion.get_page(page)
 
-    #Sacar obras
+    # Obtener todos los lotes
     lotes=Lote.objects.all()
-    #Paginar obras
+    # Paginación de lotes (mostrar 3 por página)
     paginacion=Paginator(lotes,3)
     #Obtener numero de pagina
     page = request.GET.get('page')
@@ -33,13 +34,8 @@ def home (request):
         'lotes': page_lotes
     })
 
-def trabaja (request):
 
-    return render(request, "trabaja.html",{
-        'title':'Trabaja con nosotros',
-
-    })
-
+# Vista para la página "Sobre Nosotros"
 def sobreNosotros (request):
 
     return render(request, "SobreNosotros.html",{
@@ -47,12 +43,12 @@ def sobreNosotros (request):
     })
 
 
-
+# Vista para la página de contacto
 def contacto(request):
     if request.method == "POST":
         contact_form = ContactForm(request.POST)
         if contact_form.is_valid():
-            # Guarda los datos en variables
+            # Guardar los datos del formulario
             name = contact_form.cleaned_data['name']
             email = contact_form.cleaned_data['email']
             message = contact_form.cleaned_data['message']
@@ -84,7 +80,7 @@ def contacto(request):
     })
 
 
-
+# Vista para la página de inicio de sesión
 def login_page (request):
     if request.method == 'POST':
             username = request.POST.get ('username')
@@ -101,6 +97,8 @@ def login_page (request):
         'title':'Iniciar Sesion',
     })
 
+
+# Vista para el registro de usuarios
 def register (request):
     if request.user.is_authenticated:
         return redirect('home')
@@ -120,10 +118,7 @@ def register (request):
             'register_form': register_form
         })
 
-def en_construccion (request):
-
-    return render(request, "en_construccion.html")
-
+# Vista para cerrar la sesión de usuario (requiere autenticación)
 @login_required(login_url="login")
 def logout_user (request):
     logout(request)

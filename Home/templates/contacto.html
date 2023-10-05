@@ -1,30 +1,31 @@
-{% extends 'layouts.html' %}
+{% extends 'layouts.html' %} <!-- Extiende de layouts.html -->
 
-{% block title%}{{title}}{% endblock%}
+{% block title%}{{title}}{% endblock%} <!-- Título de la página -->
 
 
 
 {% block content%}
     <h1 class='titulo_home'>Envianos un correo con tu consulta: </h1>
     <form method ="POST" action = "{% url 'contacto' %}">
-        {% csrf_token %}
+        {% csrf_token %} <!-- Token de seguridad para proteger contra ataques CSRF -->
 
         {% for field in form %}
             <label>{{ field.label }}</label>
             {% if field.name == 'message' %}
+                <!-- Área de texto para el campo 'message' con un placeholder -->
                 <textarea name="{{ field.name }}" placeholder="Escribe tu mensaje aquí"></textarea>
             {% else %}
-                {{ field }}
+                {{ field }} <!-- Campo de entrada del formulario -->
             {% endif %}
         {% endfor %}
 
-        <input type='submit' value='Enviar'/>
+        <input type='submit' value='Enviar'/> <!-- Botón para enviar el formulario -->
     </form>
 
     {% if messages%}
             {% for message in messages %}
                 <div class="alert-success">
-                    {{message}}
+                    {{message}} <!-- Mensajes de éxito para el usuario -->
                 </div>
             {% endfor%}
     {% endif %}

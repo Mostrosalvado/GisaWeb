@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 from django.db import models
 
+# Definición del modelo Empleado
 class Empleado(models.Model):
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
@@ -15,18 +16,18 @@ class Empleado(models.Model):
     cargo = models.CharField(max_length=50, blank=True, null=True)
     salario = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
     class Meta:
-            verbose_name = 'Empleadx'
-            verbose_name_plural = 'Empleadxs'
-            ordering = ['-fecha_de_contratacion']
+            verbose_name = 'Empleadx' # Nombre singular personalizado
+            verbose_name_plural = 'Empleadxs' # Nombre plural personalizado
+            ordering = ['-fecha_de_contratacion'] # Ordenar por fecha de contratación descendente
 
     def __str__(self):
-        return f"{self.nombre} {self.apellido}"
+        return f"{self.nombre} {self.apellido}" # Representación de cadena personalizada
     
 
 from django.db import models
 
+# Definición del modelo Maquina
 class Maquina(models.Model):
-    # Información básica
     tipo = models.CharField(max_length=100)
     marca = models.CharField(max_length=100)
     modelo = models.CharField(max_length=100)
@@ -37,7 +38,7 @@ class Maquina(models.Model):
     fecha_vencimiento_seguro = models.DateField()
 
     def __str__(self):
-        return self.tipo
+        return self.tipo # Representación de cadena para el modelo Maquina
 
 
 

@@ -383,6 +383,15 @@ footer i{
     margin-bottom: 80px;
 }
 
+.registrate {
+    text-align: center;
+    font-size: x-large;
+    text-decoration: none;
+    margin-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 #ingresa {
     text-decoration: none;

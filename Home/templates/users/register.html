@@ -1,33 +1,33 @@
-{% extends 'layouts.html' %}
+{% extends 'layouts.html' %} <!-- Extiende de layouts.html -->
 
 
-{% block title%}{{title}}{% endblock%}
+{% block title%}{{title}}{% endblock%} <!-- Título de la página -->
 
 {% block content %}
 
     <form method ="POST" action = "{% url 'register' %}">
-        {% csrf_token %}
+        {% csrf_token %} <!-- Token de seguridad para proteger contra ataques CSRF -->
 
         {% if messages%}
         {% for message in messages %}
             <div class="{% if message == 'messages.success' %} alert-success {% else %} alert-warning {% endif %}">
-                {{message}}
+                {{message}} <!-- Mensajes de éxito o advertencia para el usuario -->
             </div>
         {% endfor%}
     {% endif %}
     
-    {{register_form.errors}}
+    {{register_form.errors}} <!-- Posibles errores de validación del formulario de registro -->
 
 
 
 
         {% for field in register_form %}
-            <label>{{field.label}}</label>
-            {{field}}
+            <label>{{field.label}}</label> <!-- Etiqueta del campo del formulario, procedente de RegisterForm -->
+            {{field}} <!-- Campo de entrada del formulario, procedente de RegisterForm -->
 
         {% endfor %}
 
-        <input type='submit' value='Registrarse'/>
+        <input type='submit' value='Registrarse'/> <!-- Botón para enviar el formulario de registro -->
     </form>
 
 {% endblock %}
