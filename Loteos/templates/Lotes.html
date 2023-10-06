@@ -3,6 +3,7 @@
 <head>
     <title>{{title}}</title>
     {% load static %}
+    <!-- Barra de navegación y logotipo de la empresa -->
     <div id="logotipo">
             <a href="{% url 'lote' %}">
             <img src="{% static 'images/PDS.png'%}"/>
@@ -14,19 +15,22 @@
 </head>
 
 <body>
+    <!-- Menú de navegación -->
     <div id="menu">
         <ul>
             <li><a href="/home/">Gisa</a></li>
             {% if user.is_authenticated %}
+                <!-- Enlaces para usuarios autenticados -->
                 <li><a href="{% url 'mi_lote' %}">Mi lote</a></li>
                 <li><a href="{% url 'salir' %}">Salir</a></li>
             {% endif %}
             <li class="social">
+                <!-- Enlace a Instagram -->
                 <a href="https://www.instagram.com/puertodelsol_as/"><i class="ri-instagram-fill"></i></a>
             </li>
         </ul>
     </div>
-
+    <!-- Barra de búsqueda de lotes -->
     <form method="post" action="{% url 'Buscar_lote' id_lote=1 %}" id="barra" class="search">
         {% csrf_token %}
         <input type="text" name="id_lote" placeholder="ID de lote..." class="search_input">
@@ -39,6 +43,7 @@
 {% block content  %}
     <div class="contenedor-principal">
     <div>
+        <!-- Mapa de lotes -->
         <img class="mapa" src="{% static 'images/lotes.png' %}" alt="Lotes"/>
     </div>
 
@@ -49,6 +54,7 @@
 
     <footer class='footer'>
         <div>
+            <!-- Información de derechos de autor y enlaces -->
             <h4>Puerto del sol - Todos los derechos reservados 
                 <a class='link' href="https://forms.gle/yNaXYgjHYANxqY6g9" target="_blank">Trabaja con nosotros</a>
                 <a class='link' href="{% url 'contacto' %}">Contáctanos</a>

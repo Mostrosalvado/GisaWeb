@@ -2,21 +2,24 @@
 
 {% block content %}
     {% if lote_encontrado %}
+        <!-- Botón para volver a la página de listado de lotes -->
         <button class="search-button-buscar-lote"> 
             <a href="{% url 'lote' %}" >Volver</a>
         </button>
 
-
+        <!-- Título del lote encontrado -->
         <h4 id="nombre_lote">Lote: {{ lote_encontrado.id_lote }}</h4>
+        <!-- Comprobar si el lote está disponible -->
         {% if lote_encontrado.status == 'Disponible'%}
+            <!-- Botón para comprar el lote si está disponible -->
             <button id="contactButton">
                 <a id="boton_comprar" href="{% url 'contacto' %}" >Comprar Lote</a>
             </button>
         {% endif%}
-
+        <!-- Precio del lote -->
         <h4 id="precio">Precio: Usd. {{ lote_encontrado.price }}</h4>
 
-
+        <!-- Estado del lote (Disponible o Vendido) -->
         <h3 class="{% if lote_encontrado.status == 'Disponible' %} estado_disponible {% else %} estado_vendido {% endif %}">
             Estado: {% if lote_encontrado.status == 'Disponible' %} Disponible {% else %} Vendido {% endif %}
         </h3>
@@ -24,12 +27,13 @@
 
 
 
-
+        <!-- Contenedor de imagen del lote -->
         <div id="image-container">
             <img src="{{ lote_encontrado.image.url }}" alt="Imagen del lote" id="image_lote">
         </div>
         
         </br>
+        <!-- Información adicional del lote -->
         <div class="lote-info">
             <p id="content_lote">{{ lote_encontrado.content|safe}}</p>
         </div>
@@ -38,6 +42,7 @@
         </button>
         
     {% else %}
+        <!-- Mensaje de que el lote no fue encontrado -->
         <p>No se encontró el lote.</p>
     {% endif %}
 {% endblock %}

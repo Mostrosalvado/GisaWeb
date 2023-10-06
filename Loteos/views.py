@@ -11,13 +11,15 @@ from django.contrib.auth import logout
 
 
 # Create your views here.
+
+# Vista para listar lotes
 def Loteo (request):
         return render(request, "Lotes.html",{
         'title':'Lotes',
 })
 
 
-
+# Vista para buscar un lote por ID
 def BuscaLote(request, id_lote=None):  
         if request.method == 'POST':
                 id_lote = request.POST.get('id_lote')
@@ -32,8 +34,8 @@ def BuscaLote(request, id_lote=None):
 
 
 
-from django.http import HttpResponse
 
+# Vista para ver el lote propio del usuario autenticado
 def Mi_lote(request):
         if request.user.is_authenticated:
                 lote = Lote.objects.filter(user=request.user).first()
@@ -56,20 +58,20 @@ def Mi_lote(request):
                 'no_authenticated_message': no_authenticated_message
 })
 
-
+# Vista para cerrar sesión de un usuario autenticado
 @login_required(login_url="login")
 def logout_user (request):
         logout(request)
         return redirect ('home')
 
-
+# Vista basada en clase para listar y crear lotes a través de la API
 class LoteListCreateView(generics.ListCreateAPIView):
         queryset = Lote.objects.all()
         serializer_class = LoteSerializer
         authentication_classes = [SessionAuthentication, BasicAuthentication]
         permission_classes = [IsAuthenticated]
 
-
+# Vista basada en clase para recuperar detalles de un lote específico por ID a través de la API
 class LoteIdRetrieveView(generics.RetrieveAPIView):
         queryset = Lote.objects.all()
         serializer_class = LoteSerializer

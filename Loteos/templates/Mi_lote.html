@@ -2,6 +2,7 @@
 
 {% block content %}
     {% if no_authenticated_message %}
+        <!-- Mensaje para usuarios no autenticados -->
         <div class="no_lote">
             {{ no_authenticated_message }}
         </div>
@@ -13,18 +14,22 @@
 
 
     {% if lote %}
+        <!-- Botón para volver a la página de lotes -->
         <button class="search-button-buscar-lote"> 
             <a href="{% url 'lote' %}" >Volver</a>
         </button>
+        <!-- Título y detalles del lote -->
         <h1 class="titulo">Detalles del Lote</h1>
         <p id="nombre_lote">ID de Lote: {{ lote.id_lote}}</p>
         <p id="precio" >Precio: {{ lote.price }}</p>
         <p class="{% if lote.status == 'Disponible' %} estado_disponible {% else %} estado_vendido {% endif %}">
             Estado: {{ lote.status }}
         </p>
+        <!-- Imagen del lote -->
         <div id="image-container">
             <img id="image_lote" src="{{ lote.image.url }}" alt="Imagen del lote">
         </div>
+        <!-- Información adicional del lote -->
         <div class="lote-info">
             <p id="content_lote" >{{ lote.content|safe }}</p>
         </div>
