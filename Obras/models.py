@@ -3,6 +3,8 @@ from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
 
 # Create your models here.
+
+# Define el modelo para las categorías de obras
 class Category(models.Model):
     name= models.CharField(max_length=100 , verbose_name="Nombre")
     description = models.CharField(max_length=255 , verbose_name="Descripción")
@@ -14,7 +16,10 @@ class Category(models.Model):
 
     def __str__(self): 
         return self.name
-    
+
+
+
+# Define el modelo para las obras
 class Obra (models.Model):
         title=models.CharField(max_length=150 , verbose_name="Titulo")
         content=RichTextField (verbose_name="Contenido")

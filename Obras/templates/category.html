@@ -1,13 +1,16 @@
-{% extends 'layouts.html' %}
+{% extends 'layouts.html' %} <!-- Extiende de layouts.html -->
 
-{% block title %}{{ title }}{% endblock %}
+{% block title %}{{ title }}{% endblock %} <!-- Titulo de la página -->
 
 {% block content %}
+    <!-- Encabezado de la página -->
     <h1 class="titulo_articulos">{{ title }}</h1>
-
+    <!-- Bucle para mostrar obras -->
     {% for obra in obras %}
         {% if obra.public == True %}
+            <!-- Contenedor de una obra -->
             <article class="obra-item-categorias">
+                <!-- Imágenes de la obra (hasta 3 imágenes) -->
                 {% if obra.image_1.url %}
                     <img src="{{ obra.image_1.url }}" alt="Imagen 1">
                 {% endif %}
@@ -19,10 +22,11 @@
                 {% if obra.image_3.url %}
                     <img src="{{ obra.image_3.url }}" alt="Imagen 3">
                 {% endif %}
-
+                <!-- Datos de la obra -->
                 <div class="data">
                     <h2>{{ obra.title }}</h2>
                     <p>
+                        <!-- Enlaces a las categorías de la obra -->
                         {% for category in obra.category.all %}
                             <a href="{% url 'categoria' category.id %}" class="link">{{ category }}</a>
                             {% if forloop.counter < obra.category.all|length %}

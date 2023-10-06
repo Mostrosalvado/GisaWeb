@@ -10,7 +10,7 @@ from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 
-
+# Vista para mostrar todas las obras
 def obras(request):
     # Sacar obras 
     obras = Obra.objects.all() 
@@ -20,7 +20,7 @@ def obras(request):
         'obras': obras
     })
 
-
+# Vista para mostrar las obras del usuario logueado
 @login_required(login_url="login")
 def obras_user(request):
     # Sacar obras del usuario logueado
@@ -31,6 +31,7 @@ def obras_user(request):
         'obras': obras
     })
 
+# Vista para mostrar obras de una categoría específica
 def category(request, category_id):
     category = get_object_or_404(Category, id=category_id)
     obras = Obra.objects.filter(category = category_id)
@@ -42,13 +43,14 @@ def category(request, category_id):
         'title': category.name
     })
 
+# Vista genérica para listar y crear obras en la API
 class ObraListCreateView(generics.ListCreateAPIView):
         queryset = Obra.objects.all()
         serializer_class = ObraSerializer
         authentication_classes = [SessionAuthentication, BasicAuthentication]
         permission_classes = [IsAuthenticated]
 
-
+# Vista genérica para obtener detalles de una obra específica en la API
 class ObraIdRetrieveView(generics.RetrieveAPIView):
         queryset = Obra.objects.all()
         serializer_class = ObraSerializer

@@ -1,16 +1,20 @@
-{% extends 'layouts.html' %}
+{% extends 'layouts.html' %} <!-- Extiende de layouts.html -->
 
-{% block title %}{{ title }}{% endblock %}
+{% block title %}{{ title }}{% endblock %} <!-- Titulo de la página -->
 
 {% block content %}
+    <!-- Encabezado de la página -->
     <h1 id="titulo_obras">{{ title }}</h1>
     <hr class="separador">
-
+    <!-- Comprobar si hay obras disponibles -->
     {% if obras %}
         {% for obra in obras %}
+            <!-- Bucle para mostrar obras -->
             {% if obra.public %}
+                <!-- Contenedor de una obra -->
                 <article class="obra-item-obras">
                     <div class="image-obras">
+                        <!-- Imágenes de la obra (hasta 3 imágenes) -->
                         {% if obra.image_1.url %}
                             <img src="{{ obra.image_1.url }}" alt="Imagen 1">
                         {% endif %}
@@ -21,9 +25,11 @@
                             <img src="{{ obra.image_3.url }}" alt="Imagen 3">
                         {% endif %}
                     </div>
+                    <!-- Datos de la obra -->
                     <div class="data">
                         <h2>{{ obra.title }}</h2>
                         <p>
+                            <!-- Enlaces a las categorías de la obra -->
                             {% for category in obra.category.all %}
                                 <a href="{% url 'categoria' category.id %}" class='link'>{{ category }}</a>
                                 {% if not forloop.last %}
@@ -40,6 +46,7 @@
             {% endif %}
         {% endfor %}
     {% else %}
+        <!-- Mensaje y boton de contactanos si no hay obras disponibles -->
         <h2 id="titulo_obras">Mándanos un correo para crear una obra</h2>
         <button id="contactButton">Contáctanos</button>
     {% endif %}
