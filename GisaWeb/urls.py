@@ -19,10 +19,15 @@ from django.conf import settings
 
 
 urlpatterns = [
+    # Ruta administrador
     path('admin/', admin.site.urls),
+    # Rutas de la app Home.urls
     path('', include('Home.urls')),
+    # Rutas de la app Obras.urls
     path('', include('Obras.urls')),
+    # Rutas de la app Loteos.urls
     path('', include('Loteos.urls')),
+    # Rutas de las apis de django rest_framework
     path('api-auth/', include('rest_framework.urls'))
 ]
 
